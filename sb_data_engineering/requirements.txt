@@ -1,0 +1,10 @@
+yfinance
+pandas
+requests
+sqlalchemy
+psycopg2-binary
+clickhouse-sqlalchemy
+clickhouse-driver
+dbt-core
+dbt-clickhouse
+pyyaml

@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: olap_source
+    database: gobierno_datos_olap
+    tables:
+      - name: dim_bank_info
+      - name: fact_daily_prices
+      - name: fact_fundamentals
+      - name: fact_holders
+      - name: fact_ratings
