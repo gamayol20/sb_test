@@ -1,27 +1,40 @@
-# Prueba Técnica de Ingeniería de Datos – Superintendencia de Bancos
+# Prueba Técnica de Ingeniería de Datos – SB
 
 ## Objetivo
 
 Construir un pipeline de datos end-to-end para extraer, validar, transformar y disponibilizar información financiera de bancos que cotizan en la bolsa de valores de los Estados Unidos, utilizando Yahoo Finance como fuente de datos.
 
+---
+
 ## Arquitectura
 
 La solución fue implementada bajo un enfoque por capas para separar la extracción, almacenamiento, transformación, validación y explotación analítica de los datos.
 
-- **Fuente de datos:** Yahoo Finance
-- **Extracción:** Scripts Python utilizando la librería `yfinance`
-- **Landing Zone:** PostgreSQL para almacenamiento de datos crudos
-- **Capa OLAP:** ClickHouse para explotación analítica
-- **Transformación y calidad:** DBT para modelado, validaciones y pruebas de calidad
-- **Orquestación:** Airflow
-- **Despliegue:** Docker Compose
+- **Fuente de datos:** Yahoo Finance  
+- **Extracción:** Scripts en Python utilizando la librería `yfinance`  
+- **Landing Zone:** PostgreSQL para almacenamiento de datos crudos  
+- **Capa OLAP:** ClickHouse para explotación analítica  
+- **Transformación y calidad:** DBT para modelado, validaciones y pruebas de calidad  
+- **Orquestación:** Apache Airflow  
+- **Despliegue:** Docker Compose  
+
+---
 
 ## Decisión de integración de datos
 
-Aunque el enunciado recomienda el uso de Airbyte, en esta solución se implementó un mecanismo de integración personalizado utilizando scripts Python, almacenamiento intermedio en archivos CSV y orquestación mediante Apache Airflow, manteniendo un flujo end-to-end completamente automatizado y controlado.
+Aunque el enunciado recomienda el uso de Airbyte, en esta solución se implementó un mecanismo de integración personalizado utilizando:
+
+- Scripts Python  
+- Archivos CSV como capa intermedia  
+- Orquestación con Airflow  
+
+Esto permitió mantener un flujo completamente automatizado y controlado, cumpliendo con los requerimientos funcionales del pipeline.
+
+---
 
 ## Estructura del Proyecto
 
+```text
 sb_data_engineering/
 ├── airflow/
 │   └── dags/
@@ -36,7 +49,7 @@ sb_data_engineering/
 ├── dbt/
 │   └── sb_finance_project/
 ├── docs/
-│   └── arquitectura/
+│   ├── arquitectura/
 │   └── screenshots/
 ├── sql/
 ├── docker-compose.yml
@@ -69,68 +82,65 @@ sb_data_engineering/
 
 ## Precios diarios
 
-Date
-Open
-High
-Low
-Close
-Volume
+- Date
+- Open
+- High
+- Low
+- Close
+- Volume
 
 ## Fundamentales
 
-Assets
-Debt
-Invested Capital
-Share Issued
+- Assets
+- Debt
+- Invested Capital
+- Share Issued
 
 ## Tenedores
 
-Date
-Holder
-Shares
-Value
+- Date
+- Holder
+- Shares
+- Value
 
-Calificadores
+## Calificadores
 
-Date
-To Grade
-From Grade
-Action
-Tablas de Landing
+- Date
+- To Grade
+- From Grade
+- Action
 
-## Las tablas creadas en PostgreSQL para la zona de aterrizaje fueron:
+## Tablas de Landing (PostgreSQL):
 
-raw_informacion_basica
-raw_precios_diarios
-raw_fundamentales
-raw_tenedores
-raw_calificadores
-Tablas OLAP
+- raw_informacion_basica
+- raw_precios_diarios
+- raw_fundamentales
+- raw_tenedores
+- raw_calificadores
 
-## Las tablas creadas en ClickHouse para la capa analítica fueron:
+## Tablas OLAP (ClickHouse):
 
-dim_bank_info
-fact_daily_prices
-fact_fundamentals
-fact_holders
-fact_ratings
-monthly_stock_summary
-Reglas de Calidad de Datos
+- dim_bank_info
+- fact_daily_prices
+- fact_fundamentals
+- fact_holders
+- fact_ratings
+- monthly_stock_summary
 
-## Se implementaron pruebas de calidad con DBT sobre el modelo stg_fact_daily_prices, validando que los siguientes campos no contengan valores nulos:
+## Reglas de Calidad de Datos
+Se implementaron pruebas de calidad con DBT sobre el modelo stg_fact_daily_prices, validando que los siguientes campos no contengan valores nulos:
 
-ticker
-trade_date
-open_price
-high_price
-low_price
-close_price
-volume
+- ticker
+- trade_date
+- open_price
+- high_price
+- low_price
+- close_price
+- volume
 
 ## Cómo ejecutar el proyecto
 
 1. Clonar el repositorio
-```bash
 git clone <URL_DEL_REPOSITORIO>
 cd sb_data_engineering
 
@@ -164,7 +174,7 @@ dbt test
 
 ## Capturas de Pantalla
 
-Las evidencias incluyen:
+Las evidencias del funcionamiento se encuentran en docs/screenshots/, incluyendo:
 
 - Ejecución de contenedores en Docker
 - Carga de datos en PostgreSQL
@@ -178,7 +188,15 @@ Las evidencias incluyen:
 
 ## Resultados
 
-Como resultado final se generó una tabla de resumen mensual con:
+Se construyó un pipeline funcional que permite:
+
+- Integración de múltiples fuentes de datos
+- Validación de calidad automatizada
+- Explotación analítica eficiente
+
+## Resultado final
+
+Tabla monthly_stock_summary con:
 
 - Promedio mensual del precio de apertura
 - Promedio mensual del precio de cierre
@@ -186,8 +204,8 @@ Como resultado final se generó una tabla de resumen mensual con:
 
 ## Consideraciones Técnicas
 
-- Se utilizó PostgreSQL como landing zone para aislar los datos crudos.
-- ClickHouse fue seleccionado como motor OLAP por su eficiencia en consultas analíticas.
-- DBT permitió implementar validaciones de calidad y modelado desacoplado.
-- Airflow se utilizó para orquestar el pipeline completo.
-- La solución fue completamente contenerizada usando Docker Compose para garantizar portabilidad.
+- PostgreSQL se utilizó como landing zone para aislar datos crudos
+- ClickHouse se seleccionó como motor OLAP por su alto rendimiento
+- DBT permitió desacoplar lógica de transformación y calidad
+- Airflow permitió automatizar el pipeline completo
+- Docker Compose garantiza portabilidad y reproducibilidad
