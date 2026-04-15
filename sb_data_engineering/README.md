@@ -194,6 +194,8 @@ Se construyó un pipeline funcional que permite:
 - Validación de calidad automatizada
 - Explotación analítica eficiente
 
+El pipeline fue validado mediante ejecuciones completas en Airflow, garantizando la automatización del flujo de datos.
+
 ## Resultado final
 
 Tabla monthly_stock_summary con:
