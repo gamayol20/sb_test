@@ -1,0 +1,1248 @@
+[0m23:31:55.394050 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000214CF577470>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000214D1ED9A90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000214D1ED8560>]}
+
+
+============================== 23:31:55.409184 | b41ba69a-e592-48fb-95a2-57f3e172df35 ==============================
+[0m23:31:55.409184 [info ] [MainThread]: Running with dbt=1.11.8
+[0m23:31:55.410184 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\Gabriel Mayol\\OneDrive\\Documentos\\Superintendente de Bancos\\sb_data_engineering\\dbt\\sb_finance_project', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt debug', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\Gabriel Mayol\\OneDrive\\Documentos\\Superintendente de Bancos\\sb_data_engineering\\dbt\\sb_finance_project\\logs'}
+[0m23:31:55.459182 [info ] [MainThread]: dbt version: 1.11.8
+[0m23:31:55.460182 [info ] [MainThread]: python version: 3.12.3
+[0m23:31:55.461182 [info ] [MainThread]: python path: C:\Users\Gabriel Mayol\OneDrive\Documentos\Superintendente de Bancos\sb_data_engineering\.venv\Scripts\python.exe
+[0m23:31:55.462182 [info ] [MainThread]: os info: Windows-10-10.0.19045-SP0
+[0m23:31:55.575483 [info ] [MainThread]: Using profiles dir at C:\Users\Gabriel Mayol\OneDrive\Documentos\Superintendente de Bancos\sb_data_engineering\dbt\sb_finance_project
+[0m23:31:55.576479 [info ] [MainThread]: Using profiles.yml file at C:\Users\Gabriel Mayol\OneDrive\Documentos\Superintendente de Bancos\sb_data_engineering\dbt\sb_finance_project\profiles.yml
+[0m23:31:55.577479 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\Gabriel Mayol\OneDrive\Documentos\Superintendente de Bancos\sb_data_engineering\dbt\sb_finance_project\dbt_project.yml
+[0m23:31:55.579475 [info ] [MainThread]: adapter type: clickhouse
+[0m23:31:55.580491 [info ] [MainThread]: adapter version: 1.10.0
+[0m23:31:55.752335 [info ] [MainThread]: Configuration:
+[0m23:31:55.754330 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m23:31:55.755331 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m23:31:55.756332 [info ] [MainThread]: Required dependencies:
+[0m23:31:55.757330 [debug] [MainThread]: Executing "git --help"
+[0m23:31:55.853958 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m23:31:55.854959 [debug] [MainThread]: STDERR: "b''"
+[0m23:31:55.855959 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m23:31:55.856960 [info ] [MainThread]: Connection:
+[0m23:31:55.857959 [info ] [MainThread]:   driver: None
+[0m23:31:55.858958 [info ] [MainThread]:   host: localhost
+[0m23:31:55.859958 [info ] [MainThread]:   port: 8123
+[0m23:31:55.860410 [info ] [MainThread]:   user: default
+[0m23:31:55.861184 [info ] [MainThread]:   schema: gobierno_datos_olap
+[0m23:31:55.862195 [info ] [MainThread]:   retries: 1
+[0m23:31:55.863195 [info ] [MainThread]:   cluster: None
+[0m23:31:55.863195 [info ] [MainThread]:   database_engine: None
+[0m23:31:55.865200 [info ] [MainThread]:   cluster_mode: False
+[0m23:31:55.866199 [info ] [MainThread]:   secure: False
+[0m23:31:55.867198 [info ] [MainThread]:   verify: False
+[0m23:31:55.869200 [info ] [MainThread]:   client_cert: None
+[0m23:31:55.870196 [info ] [MainThread]:   client_cert_key: None
+[0m23:31:55.871195 [info ] [MainThread]:   connect_timeout: 10
+[0m23:31:55.871195 [info ] [MainThread]:   send_receive_timeout: 300
+[0m23:31:55.872199 [info ] [MainThread]:   sync_request_timeout: 5
+[0m23:31:55.873197 [info ] [MainThread]:   compress_block_size: 1048576
+[0m23:31:55.874195 [info ] [MainThread]:   compression: 
+[0m23:31:55.875199 [info ] [MainThread]:   check_exchange: True
+[0m23:31:55.876199 [info ] [MainThread]:   custom_settings: None
+[0m23:31:55.877197 [info ] [MainThread]:   use_lw_deletes: False
+[0m23:31:55.878197 [info ] [MainThread]:   allow_automatic_deduplication: False
+[0m23:31:55.879195 [info ] [MainThread]:   tcp_keepalive: False
+[0m23:31:55.879741 [info ] [MainThread]: Registered adapter: clickhouse=1.10.0
+[0m23:31:56.414021 [debug] [MainThread]: Acquiring new clickhouse connection 'debug'
+[0m23:31:56.416027 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m23:31:59.665801 [debug] [MainThread]: dbt_clickhouse adapter: On debug: select 1 as id...
+[0m23:31:59.721809 [debug] [MainThread]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
+[0m23:31:59.955725 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m23:31:59.956726 [info ] [MainThread]: [32mAll checks passed![0m
+[0m23:31:59.958726 [debug] [MainThread]: Command `dbt debug` succeeded at 23:31:59.958726 after 4.92 seconds
+[0m23:31:59.959725 [debug] [MainThread]: Connection 'debug' was left open.
+[0m23:31:59.960726 [debug] [MainThread]: On debug: Close
+[0m23:31:59.960726 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000214D3454B00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000214D2262FC0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000214D3A4CB00>]}
+[0m23:31:59.961726 [debug] [MainThread]: Flushing usage events
+[0m23:32:01.877299 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m23:32:14.029382 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022173F8B440>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022174F15FA0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022174F149B0>]}
+
+
+============================== 23:32:14.036381 | b88daeb4-0497-4ffb-a390-7cc54c6d39a0 ==============================
+[0m23:32:14.036381 [info ] [MainThread]: Running with dbt=1.11.8
+[0m23:32:14.038381 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\Gabriel Mayol\\OneDrive\\Documentos\\Superintendente de Bancos\\sb_data_engineering\\dbt\\sb_finance_project', 'use_colors': 'True', 'invocation_command': 'dbt run', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\Gabriel Mayol\\OneDrive\\Documentos\\Superintendente de Bancos\\sb_data_engineering\\dbt\\sb_finance_project\\logs'}
+[0m23:32:14.633573 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b88daeb4-0497-4ffb-a390-7cc54c6d39a0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022173F8B440>]}
+[0m23:32:14.733388 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b88daeb4-0497-4ffb-a390-7cc54c6d39a0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022174F3BCE0>]}
+[0m23:32:14.736388 [info ] [MainThread]: Registered adapter: clickhouse=1.10.0
+[0m23:32:15.259190 [debug] [MainThread]: checksum: 7d524ac048c2100769df89d592e662e060a73ca564e31bd9c2a37efdfe8d8ab6, vars: {}, profile: , target: , version: 1.11.8
+[0m23:32:15.261199 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m23:32:15.262190 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'b88daeb4-0497-4ffb-a390-7cc54c6d39a0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022174FC35F0>]}
+[0m23:32:19.607013 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b88daeb4-0497-4ffb-a390-7cc54c6d39a0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022176AEE090>]}
+[0m23:32:19.764611 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Gabriel Mayol\OneDrive\Documentos\Superintendente de Bancos\sb_data_engineering\dbt\sb_finance_project\target\manifest.json
+[0m23:32:19.787238 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Gabriel Mayol\OneDrive\Documentos\Superintendente de Bancos\sb_data_engineering\dbt\sb_finance_project\target\semantic_manifest.json
+[0m23:32:19.855677 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'b88daeb4-0497-4ffb-a390-7cc54c6d39a0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022176DAAB10>]}
+[0m23:32:19.857676 [info ] [MainThread]: Found 2 models, 7 data tests, 5 sources, 523 macros
+[0m23:32:19.859672 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b88daeb4-0497-4ffb-a390-7cc54c6d39a0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022176DA3110>]}
+[0m23:32:19.866680 [info ] [MainThread]: 
+[0m23:32:19.868672 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m23:32:19.870677 [info ] [MainThread]: 
+[0m23:32:19.872670 [debug] [MainThread]: Acquiring new clickhouse connection 'master'
+[0m23:32:19.896670 [debug] [ThreadPool]: Acquiring new clickhouse connection 'list_'
+[0m23:32:19.920236 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m23:32:20.621434 [debug] [ThreadPool]: dbt_clickhouse adapter: On list_: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "sb_finance_project", "target_name": "dev", "connection_name": "list_"} */
+
+    select name from system.databases
+  ...
+[0m23:32:20.672010 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
+[0m23:32:20.708014 [debug] [ThreadPool]: Acquiring new clickhouse connection 'list__gobierno_datos_olap'
+[0m23:32:20.719642 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m23:32:21.286905 [debug] [ThreadPool]: dbt_clickhouse adapter: On list__gobierno_datos_olap: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "sb_finance_project", "target_name": "dev", "connection_name": "list__gobierno_datos_olap"} */
+with mv_sources as (
+      -- Find all MVs and their target tables (database and name of the MV, plus the SELECT SQL)
+      select
+        name as mv_name,
+        database as mv_database,
+        any(as_select) as mv_sql,
+        any(replaceRegexpOne(create_table_query, '.*TO\\s+`?([^`\\s(]+)`?\\.`?([^`\\s(]+)`?.*', '\\1.\\2')) as target_fqn
+      
+      from system.tables
+      
+      where engine = 'MaterializedView'
+        and create_table_query like '%TO %'
+      group by mv_name, mv_database
+    )
+    select
+      t.name as name,
+      t.database as schema,
+      multiIf(
+        t.engine = 'MaterializedView', 'materialized_view',
+        t.engine = 'View', 'view',
+        t.engine = 'Dictionary', 'dictionary',
+        'table'
+      ) as type,
+      db.engine as db_engine,
+      groupArrayIf(
+        map('schema', mv_sources.mv_database, 'name', mv_sources.mv_name, 'sql', mv_sources.mv_sql),
+        mv_sources.mv_name != ''
+      ) as mvs_pointing_to_it,0 as is_on_cluster
+        from system.tables as t
+      
+        join system.databases as db on t.database = db.name
+        left join mv_sources on mv_sources.target_fqn = concat(t.database, '.', t.name)
+      where schema = 'gobierno_datos_olap'
+      group by name, schema, type, db_engine
+
+  ...
+[0m23:32:21.371052 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.08 seconds
+[0m23:32:21.380919 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b88daeb4-0497-4ffb-a390-7cc54c6d39a0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022176E33770>]}
+[0m23:32:21.428903 [debug] [Thread-1 (]: Began running node model.sb_finance_project.monthly_stock_summary
+[0m23:32:21.429919 [info ] [Thread-1 (]: 1 of 2 START sql table model `gobierno_datos_olap`.`monthly_stock_summary` ..... [RUN]
+[0m23:32:21.431919 [debug] [Thread-1 (]: Acquiring new clickhouse connection 'model.sb_finance_project.monthly_stock_summary'
+[0m23:32:21.432918 [debug] [Thread-1 (]: Began compiling node model.sb_finance_project.monthly_stock_summary
+[0m23:32:21.523206 [debug] [Thread-1 (]: Writing injected SQL for node "model.sb_finance_project.monthly_stock_summary"
+[0m23:32:21.527612 [debug] [Thread-1 (]: Began executing node model.sb_finance_project.monthly_stock_summary
+[0m23:32:21.650284 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m23:32:22.197929 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.sb_finance_project.monthly_stock_summary: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "sb_finance_project", "target_name": "dev", "node_id": "model.sb_finance_project.monthly_stock_summary"} */
+
+            
+
+    
+        create table `gobierno_datos_olap`.`monthly_stock_summary__dbt_backup`
+        
+  
+        
+  engine = MergeTree()
+        
+      order by (tuple())
+        
+        
+        
+        
+                    -- end_of_sql
+                    SETTINGS replicated_deduplication_window='0'
+
+                    
+            empty
+          as (
+            select
+    ticker,
+    toYear(trade_date) as year,
+    toMonth(trade_date) as month,
+    avg(open_price) as avg_open_price,
+    avg(close_price) as avg_close_price,
+    avg(volume) as avg_volume
+from gobierno_datos_olap.fact_daily_prices
+group by
+    ticker,
+    toYear(trade_date),
+    toMonth(trade_date)
+          )
+        
+        ...
+[0m23:32:22.256172 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.06 seconds
+[0m23:32:22.311394 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.sb_finance_project.monthly_stock_summary: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "sb_finance_project", "target_name": "dev", "node_id": "model.sb_finance_project.monthly_stock_summary"} */
+
+    select name, type from system.columns where table = 'monthly_stock_summary__dbt_backup'
+    
+      
+        and database = 'gobierno_datos_olap'
+      
+    
+    order by position
+  ...
+[0m23:32:22.367593 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
+[0m23:32:22.383904 [debug] [Thread-1 (]: Writing runtime sql for node "model.sb_finance_project.monthly_stock_summary"
+[0m23:32:22.391443 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.sb_finance_project.monthly_stock_summary: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "sb_finance_project", "target_name": "dev", "node_id": "model.sb_finance_project.monthly_stock_summary"} */
+
+  
+    
+    
+    
+        
+         
+
+
+        
+  
+
+  insert into `gobierno_datos_olap`.`monthly_stock_summary__dbt_backup`
+        ("ticker", "year", "month", "avg_open_price", "avg_close_price", "avg_volume")select
+    ticker,
+    toYear(trade_date) as year,
+    toMonth(trade_date) as month,
+    avg(open_price) as avg_open_price,
+    avg(close_price) as avg_close_price,
+    avg(volume) as avg_volume
+from gobierno_datos_olap.fact_daily_prices
+group by
+    ticker,
+    toYear(trade_date),
+    toMonth(trade_date)
+  ...
+[0m23:32:22.455766 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.06 seconds
+[0m23:32:22.467817 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.sb_finance_project.monthly_stock_summary: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "sb_finance_project", "target_name": "dev", "node_id": "model.sb_finance_project.monthly_stock_summary"} */
+EXCHANGE TABLES `gobierno_datos_olap`.`monthly_stock_summary__dbt_backup` AND `gobierno_datos_olap`.`monthly_stock_summary` 
+  
+  ...
+[0m23:32:22.517811 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
+[0m23:32:22.561393 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.sb_finance_project.monthly_stock_summary: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "sb_finance_project", "target_name": "dev", "node_id": "model.sb_finance_project.monthly_stock_summary"} */
+drop table if exists `gobierno_datos_olap`.`monthly_stock_summary__dbt_backup` 
+  ...
+[0m23:32:22.608773 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
+[0m23:32:22.613883 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b88daeb4-0497-4ffb-a390-7cc54c6d39a0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022176AEEAB0>]}
+[0m23:32:22.615896 [info ] [Thread-1 (]: 1 of 2 OK created sql table model `gobierno_datos_olap`.`monthly_stock_summary`  [[32mOK[0m in 1.18s]
+[0m23:32:22.617896 [debug] [Thread-1 (]: Finished running node model.sb_finance_project.monthly_stock_summary
+[0m23:32:22.618897 [debug] [Thread-1 (]: Began running node model.sb_finance_project.stg_fact_daily_prices
+[0m23:32:22.619937 [info ] [Thread-1 (]: 2 of 2 START sql view model `gobierno_datos_olap`.`stg_fact_daily_prices` ...... [RUN]
+[0m23:32:22.620928 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.sb_finance_project.monthly_stock_summary, now model.sb_finance_project.stg_fact_daily_prices)
+[0m23:32:22.621942 [debug] [Thread-1 (]: Began compiling node model.sb_finance_project.stg_fact_daily_prices
+[0m23:32:22.624941 [debug] [Thread-1 (]: Writing injected SQL for node "model.sb_finance_project.stg_fact_daily_prices"
+[0m23:32:22.626940 [debug] [Thread-1 (]: Began executing node model.sb_finance_project.stg_fact_daily_prices
+[0m23:32:22.641640 [debug] [Thread-1 (]: Creating new relation stg_fact_daily_prices
+[0m23:32:22.662730 [debug] [Thread-1 (]: Writing runtime sql for node "model.sb_finance_project.stg_fact_daily_prices"
+[0m23:32:22.666039 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.sb_finance_project.stg_fact_daily_prices: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "sb_finance_project", "target_name": "dev", "node_id": "model.sb_finance_project.stg_fact_daily_prices"} */
+
+
+  create or replace view `gobierno_datos_olap`.`stg_fact_daily_prices` 
+  
+    
+  
+  
+    
+    
+  as (
+    select
+    ticker,
+    trade_date,
+    open_price,
+    high_price,
+    low_price,
+    close_price,
+    volume
+from gobierno_datos_olap.fact_daily_prices
+    
+  )
+      
+      
+                    -- end_of_sql
+                    
+                    ...
+[0m23:32:22.718941 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
+[0m23:32:22.722536 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b88daeb4-0497-4ffb-a390-7cc54c6d39a0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022176AABB30>]}
+[0m23:32:22.723539 [info ] [Thread-1 (]: 2 of 2 OK created sql view model `gobierno_datos_olap`.`stg_fact_daily_prices` . [[32mOK[0m in 0.10s]
+[0m23:32:22.724468 [debug] [Thread-1 (]: Finished running node model.sb_finance_project.stg_fact_daily_prices
+[0m23:32:22.727083 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m23:32:22.728081 [debug] [MainThread]: Connection 'list_' was left open.
+[0m23:32:22.728081 [debug] [MainThread]: On list_: Close
+[0m23:32:22.729084 [debug] [MainThread]: Connection 'list__gobierno_datos_olap' was left open.
+[0m23:32:22.729084 [debug] [MainThread]: On list__gobierno_datos_olap: Close
+[0m23:32:22.730084 [debug] [MainThread]: Connection 'model.sb_finance_project.stg_fact_daily_prices' was left open.
+[0m23:32:22.731081 [debug] [MainThread]: On model.sb_finance_project.stg_fact_daily_prices: Close
+[0m23:32:22.732082 [info ] [MainThread]: 
+[0m23:32:22.734086 [info ] [MainThread]: Finished running 1 table model, 1 view model in 0 hours 0 minutes and 2.86 seconds (2.86s).
+[0m23:32:22.736085 [debug] [MainThread]: Command end result
+[0m23:32:22.795673 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Gabriel Mayol\OneDrive\Documentos\Superintendente de Bancos\sb_data_engineering\dbt\sb_finance_project\target\manifest.json
+[0m23:32:22.801682 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Gabriel Mayol\OneDrive\Documentos\Superintendente de Bancos\sb_data_engineering\dbt\sb_finance_project\target\semantic_manifest.json
+[0m23:32:22.810679 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\Gabriel Mayol\OneDrive\Documentos\Superintendente de Bancos\sb_data_engineering\dbt\sb_finance_project\target\run_results.json
+[0m23:32:22.811674 [info ] [MainThread]: 
+[0m23:32:22.812690 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m23:32:22.813676 [info ] [MainThread]: 
+[0m23:32:22.814676 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+[0m23:32:22.817677 [debug] [MainThread]: Command `dbt run` succeeded at 23:32:22.816677 after 8.97 seconds
+[0m23:32:22.818588 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002217246B770>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000221748A27B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022174D52FF0>]}
+[0m23:32:22.819604 [debug] [MainThread]: Flushing usage events
+[0m23:32:23.611840 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m23:32:39.476497 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001724FC4A150>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001724F341AC0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001724FC49130>]}
+
+
+============================== 23:32:39.483498 | 7b0a74d9-87ea-46ae-a483-8e82e5b6a4a7 ==============================
+[0m23:32:39.483498 [info ] [MainThread]: Running with dbt=1.11.8
+[0m23:32:39.485498 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\Gabriel Mayol\\OneDrive\\Documentos\\Superintendente de Bancos\\sb_data_engineering\\dbt\\sb_finance_project', 'invocation_command': 'dbt test', 'indirect_selection': 'eager', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\Gabriel Mayol\\OneDrive\\Documentos\\Superintendente de Bancos\\sb_data_engineering\\dbt\\sb_finance_project\\logs'}
+[0m23:32:39.805174 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '7b0a74d9-87ea-46ae-a483-8e82e5b6a4a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017250DA9790>]}
+[0m23:32:39.915045 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '7b0a74d9-87ea-46ae-a483-8e82e5b6a4a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001724F73B740>]}
+[0m23:32:39.918047 [info ] [MainThread]: Registered adapter: clickhouse=1.10.0
+[0m23:32:40.414650 [debug] [MainThread]: checksum: 7d524ac048c2100769df89d592e662e060a73ca564e31bd9c2a37efdfe8d8ab6, vars: {}, profile: , target: , version: 1.11.8
+[0m23:32:40.719640 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m23:32:40.720639 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m23:32:40.721648 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m23:32:40.804233 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '7b0a74d9-87ea-46ae-a483-8e82e5b6a4a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001725132DE50>]}
+[0m23:32:40.953421 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Gabriel Mayol\OneDrive\Documentos\Superintendente de Bancos\sb_data_engineering\dbt\sb_finance_project\target\manifest.json
+[0m23:32:40.959418 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Gabriel Mayol\OneDrive\Documentos\Superintendente de Bancos\sb_data_engineering\dbt\sb_finance_project\target\semantic_manifest.json
+[0m23:32:40.997008 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '7b0a74d9-87ea-46ae-a483-8e82e5b6a4a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001725181F710>]}
+[0m23:32:40.999007 [info ] [MainThread]: Found 2 models, 7 data tests, 5 sources, 523 macros
+[0m23:32:41.001010 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '7b0a74d9-87ea-46ae-a483-8e82e5b6a4a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000172514D8230>]}
+[0m23:32:41.004007 [info ] [MainThread]: 
+[0m23:32:41.005007 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m23:32:41.007011 [info ] [MainThread]: 
+[0m23:32:41.008011 [debug] [MainThread]: Acquiring new clickhouse connection 'master'
+[0m23:32:41.018010 [debug] [ThreadPool]: Acquiring new clickhouse connection 'list__gobierno_datos_olap'
+[0m23:32:41.040007 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m23:32:41.742089 [debug] [ThreadPool]: dbt_clickhouse adapter: On list__gobierno_datos_olap: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "sb_finance_project", "target_name": "dev", "connection_name": "list__gobierno_datos_olap"} */
+with mv_sources as (
+      -- Find all MVs and their target tables (database and name of the MV, plus the SELECT SQL)
+      select
+        name as mv_name,
+        database as mv_database,
+        any(as_select) as mv_sql,
+        any(replaceRegexpOne(create_table_query, '.*TO\\s+`?([^`\\s(]+)`?\\.`?([^`\\s(]+)`?.*', '\\1.\\2')) as target_fqn
+      
+      from system.tables
+      
+      where engine = 'MaterializedView'
+        and create_table_query like '%TO %'
+      group by mv_name, mv_database
+    )
+    select
+      t.name as name,
+      t.database as schema,
+      multiIf(
+        t.engine = 'MaterializedView', 'materialized_view',
+        t.engine = 'View', 'view',
+        t.engine = 'Dictionary', 'dictionary',
+        'table'
+      ) as type,
+      db.engine as db_engine,
+      groupArrayIf(
+        map('schema', mv_sources.mv_database, 'name', mv_sources.mv_name, 'sql', mv_sources.mv_sql),
+        mv_sources.mv_name != ''
+      ) as mvs_pointing_to_it,0 as is_on_cluster
+        from system.tables as t
+      
+        join system.databases as db on t.database = db.name
+        left join mv_sources on mv_sources.target_fqn = concat(t.database, '.', t.name)
+      where schema = 'gobierno_datos_olap'
+      group by name, schema, type, db_engine
+
+  ...
+[0m23:32:41.825192 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.08 seconds
+[0m23:32:41.858942 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '7b0a74d9-87ea-46ae-a483-8e82e5b6a4a7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017251252120>]}
+[0m23:32:41.864720 [debug] [Thread-1 (]: Began running node test.sb_finance_project.not_null_stg_fact_daily_prices_close_price.555545c23b
+[0m23:32:41.865721 [info ] [Thread-1 (]: 1 of 7 START test not_null_stg_fact_daily_prices_close_price ................... [RUN]
+[0m23:32:41.866720 [debug] [Thread-1 (]: Acquiring new clickhouse connection 'test.sb_finance_project.not_null_stg_fact_daily_prices_close_price.555545c23b'
+[0m23:32:41.867722 [debug] [Thread-1 (]: Began compiling node test.sb_finance_project.not_null_stg_fact_daily_prices_close_price.555545c23b
+[0m23:32:41.894725 [debug] [Thread-1 (]: Writing injected SQL for node "test.sb_finance_project.not_null_stg_fact_daily_prices_close_price.555545c23b"
+[0m23:32:41.897725 [debug] [Thread-1 (]: Began executing node test.sb_finance_project.not_null_stg_fact_daily_prices_close_price.555545c23b
+[0m23:32:41.992946 [debug] [Thread-1 (]: Writing runtime sql for node "test.sb_finance_project.not_null_stg_fact_daily_prices_close_price.555545c23b"
+[0m23:32:41.995947 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m23:32:42.550972 [debug] [Thread-1 (]: dbt_clickhouse adapter: On test.sb_finance_project.not_null_stg_fact_daily_prices_close_price.555545c23b: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "sb_finance_project", "target_name": "dev", "node_id": "test.sb_finance_project.not_null_stg_fact_daily_prices_close_price.555545c23b"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select close_price
+from `gobierno_datos_olap`.`stg_fact_daily_prices`
+where close_price is null
+
+
+
+  
+  
+    ) dbt_internal_test...
+[0m23:32:42.604493 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
+[0m23:32:42.612130 [info ] [Thread-1 (]: 1 of 7 PASS not_null_stg_fact_daily_prices_close_price ......................... [[32mPASS[0m in 0.74s]
+[0m23:32:42.613859 [debug] [Thread-1 (]: Finished running node test.sb_finance_project.not_null_stg_fact_daily_prices_close_price.555545c23b
+[0m23:32:42.614859 [debug] [Thread-1 (]: Began running node test.sb_finance_project.not_null_stg_fact_daily_prices_high_price.5f9df5784a
+[0m23:32:42.615857 [info ] [Thread-1 (]: 2 of 7 START test not_null_stg_fact_daily_prices_high_price .................... [RUN]
+[0m23:32:42.616857 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.sb_finance_project.not_null_stg_fact_daily_prices_close_price.555545c23b, now test.sb_finance_project.not_null_stg_fact_daily_prices_high_price.5f9df5784a)
+[0m23:32:42.617857 [debug] [Thread-1 (]: Began compiling node test.sb_finance_project.not_null_stg_fact_daily_prices_high_price.5f9df5784a
+[0m23:32:42.623857 [debug] [Thread-1 (]: Writing injected SQL for node "test.sb_finance_project.not_null_stg_fact_daily_prices_high_price.5f9df5784a"
+[0m23:32:42.625861 [debug] [Thread-1 (]: Began executing node test.sb_finance_project.not_null_stg_fact_daily_prices_high_price.5f9df5784a
+[0m23:32:42.629859 [debug] [Thread-1 (]: Writing runtime sql for node "test.sb_finance_project.not_null_stg_fact_daily_prices_high_price.5f9df5784a"
+[0m23:32:42.632947 [debug] [Thread-1 (]: dbt_clickhouse adapter: On test.sb_finance_project.not_null_stg_fact_daily_prices_high_price.5f9df5784a: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "sb_finance_project", "target_name": "dev", "node_id": "test.sb_finance_project.not_null_stg_fact_daily_prices_high_price.5f9df5784a"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select high_price
+from `gobierno_datos_olap`.`stg_fact_daily_prices`
+where high_price is null
+
+
+
+  
+  
+    ) dbt_internal_test...
+[0m23:32:42.684010 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
+[0m23:32:42.687010 [info ] [Thread-1 (]: 2 of 7 PASS not_null_stg_fact_daily_prices_high_price .......................... [[32mPASS[0m in 0.07s]
+[0m23:32:42.689007 [debug] [Thread-1 (]: Finished running node test.sb_finance_project.not_null_stg_fact_daily_prices_high_price.5f9df5784a
+[0m23:32:42.690008 [debug] [Thread-1 (]: Began running node test.sb_finance_project.not_null_stg_fact_daily_prices_low_price.34cfd31e0e
+[0m23:32:42.691007 [info ] [Thread-1 (]: 3 of 7 START test not_null_stg_fact_daily_prices_low_price ..................... [RUN]
+[0m23:32:42.692021 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.sb_finance_project.not_null_stg_fact_daily_prices_high_price.5f9df5784a, now test.sb_finance_project.not_null_stg_fact_daily_prices_low_price.34cfd31e0e)
+[0m23:32:42.693006 [debug] [Thread-1 (]: Began compiling node test.sb_finance_project.not_null_stg_fact_daily_prices_low_price.34cfd31e0e
+[0m23:32:42.702009 [debug] [Thread-1 (]: Writing injected SQL for node "test.sb_finance_project.not_null_stg_fact_daily_prices_low_price.34cfd31e0e"
+[0m23:32:42.704007 [debug] [Thread-1 (]: Began executing node test.sb_finance_project.not_null_stg_fact_daily_prices_low_price.34cfd31e0e
+[0m23:32:42.709008 [debug] [Thread-1 (]: Writing runtime sql for node "test.sb_finance_project.not_null_stg_fact_daily_prices_low_price.34cfd31e0e"
+[0m23:32:42.710596 [debug] [Thread-1 (]: dbt_clickhouse adapter: On test.sb_finance_project.not_null_stg_fact_daily_prices_low_price.34cfd31e0e: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "sb_finance_project", "target_name": "dev", "node_id": "test.sb_finance_project.not_null_stg_fact_daily_prices_low_price.34cfd31e0e"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select low_price
+from `gobierno_datos_olap`.`stg_fact_daily_prices`
+where low_price is null
+
+
+
+  
+  
+    ) dbt_internal_test...
+[0m23:32:42.765025 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
+[0m23:32:42.768697 [info ] [Thread-1 (]: 3 of 7 PASS not_null_stg_fact_daily_prices_low_price ........................... [[32mPASS[0m in 0.08s]
+[0m23:32:42.772693 [debug] [Thread-1 (]: Finished running node test.sb_finance_project.not_null_stg_fact_daily_prices_low_price.34cfd31e0e
+[0m23:32:42.775692 [debug] [Thread-1 (]: Began running node test.sb_finance_project.not_null_stg_fact_daily_prices_open_price.d0a08f9acd
+[0m23:32:42.777692 [info ] [Thread-1 (]: 4 of 7 START test not_null_stg_fact_daily_prices_open_price .................... [RUN]
+[0m23:32:42.781694 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.sb_finance_project.not_null_stg_fact_daily_prices_low_price.34cfd31e0e, now test.sb_finance_project.not_null_stg_fact_daily_prices_open_price.d0a08f9acd)
+[0m23:32:42.783695 [debug] [Thread-1 (]: Began compiling node test.sb_finance_project.not_null_stg_fact_daily_prices_open_price.d0a08f9acd
+[0m23:32:42.799687 [debug] [Thread-1 (]: Writing injected SQL for node "test.sb_finance_project.not_null_stg_fact_daily_prices_open_price.d0a08f9acd"
+[0m23:32:42.802689 [debug] [Thread-1 (]: Began executing node test.sb_finance_project.not_null_stg_fact_daily_prices_open_price.d0a08f9acd
+[0m23:32:42.808687 [debug] [Thread-1 (]: Writing runtime sql for node "test.sb_finance_project.not_null_stg_fact_daily_prices_open_price.d0a08f9acd"
+[0m23:32:42.831693 [debug] [Thread-1 (]: dbt_clickhouse adapter: On test.sb_finance_project.not_null_stg_fact_daily_prices_open_price.d0a08f9acd: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "sb_finance_project", "target_name": "dev", "node_id": "test.sb_finance_project.not_null_stg_fact_daily_prices_open_price.d0a08f9acd"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select open_price
+from `gobierno_datos_olap`.`stg_fact_daily_prices`
+where open_price is null
+
+
+
+  
+  
+    ) dbt_internal_test...
+[0m23:32:42.899052 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.07 seconds
+[0m23:32:42.907067 [info ] [Thread-1 (]: 4 of 7 PASS not_null_stg_fact_daily_prices_open_price .......................... [[32mPASS[0m in 0.13s]
+[0m23:32:42.912116 [debug] [Thread-1 (]: Finished running node test.sb_finance_project.not_null_stg_fact_daily_prices_open_price.d0a08f9acd
+[0m23:32:42.915116 [debug] [Thread-1 (]: Began running node test.sb_finance_project.not_null_stg_fact_daily_prices_ticker.2554851c99
+[0m23:32:42.917116 [info ] [Thread-1 (]: 5 of 7 START test not_null_stg_fact_daily_prices_ticker ........................ [RUN]
+[0m23:32:42.921120 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.sb_finance_project.not_null_stg_fact_daily_prices_open_price.d0a08f9acd, now test.sb_finance_project.not_null_stg_fact_daily_prices_ticker.2554851c99)
+[0m23:32:42.924108 [debug] [Thread-1 (]: Began compiling node test.sb_finance_project.not_null_stg_fact_daily_prices_ticker.2554851c99
+[0m23:32:42.951103 [debug] [Thread-1 (]: Writing injected SQL for node "test.sb_finance_project.not_null_stg_fact_daily_prices_ticker.2554851c99"
+[0m23:32:42.954098 [debug] [Thread-1 (]: Began executing node test.sb_finance_project.not_null_stg_fact_daily_prices_ticker.2554851c99
+[0m23:32:42.958100 [debug] [Thread-1 (]: Writing runtime sql for node "test.sb_finance_project.not_null_stg_fact_daily_prices_ticker.2554851c99"
+[0m23:32:42.961101 [debug] [Thread-1 (]: dbt_clickhouse adapter: On test.sb_finance_project.not_null_stg_fact_daily_prices_ticker.2554851c99: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "sb_finance_project", "target_name": "dev", "node_id": "test.sb_finance_project.not_null_stg_fact_daily_prices_ticker.2554851c99"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select ticker
+from `gobierno_datos_olap`.`stg_fact_daily_prices`
+where ticker is null
+
+
+
+  
+  
+    ) dbt_internal_test...
+[0m23:32:43.011694 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
+[0m23:32:43.014695 [info ] [Thread-1 (]: 5 of 7 PASS not_null_stg_fact_daily_prices_ticker .............................. [[32mPASS[0m in 0.09s]
+[0m23:32:43.016696 [debug] [Thread-1 (]: Finished running node test.sb_finance_project.not_null_stg_fact_daily_prices_ticker.2554851c99
+[0m23:32:43.017695 [debug] [Thread-1 (]: Began running node test.sb_finance_project.not_null_stg_fact_daily_prices_trade_date.ea40d08156
+[0m23:32:43.018695 [info ] [Thread-1 (]: 6 of 7 START test not_null_stg_fact_daily_prices_trade_date .................... [RUN]
+[0m23:32:43.019696 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.sb_finance_project.not_null_stg_fact_daily_prices_ticker.2554851c99, now test.sb_finance_project.not_null_stg_fact_daily_prices_trade_date.ea40d08156)
+[0m23:32:43.020695 [debug] [Thread-1 (]: Began compiling node test.sb_finance_project.not_null_stg_fact_daily_prices_trade_date.ea40d08156
+[0m23:32:43.026694 [debug] [Thread-1 (]: Writing injected SQL for node "test.sb_finance_project.not_null_stg_fact_daily_prices_trade_date.ea40d08156"
+[0m23:32:43.028695 [debug] [Thread-1 (]: Began executing node test.sb_finance_project.not_null_stg_fact_daily_prices_trade_date.ea40d08156
+[0m23:32:43.032692 [debug] [Thread-1 (]: Writing runtime sql for node "test.sb_finance_project.not_null_stg_fact_daily_prices_trade_date.ea40d08156"
+[0m23:32:43.034692 [debug] [Thread-1 (]: dbt_clickhouse adapter: On test.sb_finance_project.not_null_stg_fact_daily_prices_trade_date.ea40d08156: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "sb_finance_project", "target_name": "dev", "node_id": "test.sb_finance_project.not_null_stg_fact_daily_prices_trade_date.ea40d08156"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select trade_date
+from `gobierno_datos_olap`.`stg_fact_daily_prices`
+where trade_date is null
+
+
+
+  
+  
+    ) dbt_internal_test...
+[0m23:32:43.088312 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
+[0m23:32:43.091311 [info ] [Thread-1 (]: 6 of 7 PASS not_null_stg_fact_daily_prices_trade_date .......................... [[32mPASS[0m in 0.07s]
+[0m23:32:43.093316 [debug] [Thread-1 (]: Finished running node test.sb_finance_project.not_null_stg_fact_daily_prices_trade_date.ea40d08156
+[0m23:32:43.093316 [debug] [Thread-1 (]: Began running node test.sb_finance_project.not_null_stg_fact_daily_prices_volume.4d6a84712a
+[0m23:32:43.094316 [info ] [Thread-1 (]: 7 of 7 START test not_null_stg_fact_daily_prices_volume ........................ [RUN]
+[0m23:32:43.095566 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.sb_finance_project.not_null_stg_fact_daily_prices_trade_date.ea40d08156, now test.sb_finance_project.not_null_stg_fact_daily_prices_volume.4d6a84712a)
+[0m23:32:43.096578 [debug] [Thread-1 (]: Began compiling node test.sb_finance_project.not_null_stg_fact_daily_prices_volume.4d6a84712a
+[0m23:32:43.104579 [debug] [Thread-1 (]: Writing injected SQL for node "test.sb_finance_project.not_null_stg_fact_daily_prices_volume.4d6a84712a"
+[0m23:32:43.106577 [debug] [Thread-1 (]: Began executing node test.sb_finance_project.not_null_stg_fact_daily_prices_volume.4d6a84712a
+[0m23:32:43.109580 [debug] [Thread-1 (]: Writing runtime sql for node "test.sb_finance_project.not_null_stg_fact_daily_prices_volume.4d6a84712a"
+[0m23:32:43.111580 [debug] [Thread-1 (]: dbt_clickhouse adapter: On test.sb_finance_project.not_null_stg_fact_daily_prices_volume.4d6a84712a: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "sb_finance_project", "target_name": "dev", "node_id": "test.sb_finance_project.not_null_stg_fact_daily_prices_volume.4d6a84712a"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select volume
+from `gobierno_datos_olap`.`stg_fact_daily_prices`
+where volume is null
+
+
+
+  
+  
+    ) dbt_internal_test...
+[0m23:32:43.187174 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.07 seconds
+[0m23:32:43.194173 [info ] [Thread-1 (]: 7 of 7 PASS not_null_stg_fact_daily_prices_volume .............................. [[32mPASS[0m in 0.10s]
+[0m23:32:43.199174 [debug] [Thread-1 (]: Finished running node test.sb_finance_project.not_null_stg_fact_daily_prices_volume.4d6a84712a
+[0m23:32:43.205578 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m23:32:43.208998 [debug] [MainThread]: Connection 'list__gobierno_datos_olap' was left open.
+[0m23:32:43.212835 [debug] [MainThread]: On list__gobierno_datos_olap: Close
+[0m23:32:43.215389 [debug] [MainThread]: Connection 'test.sb_finance_project.not_null_stg_fact_daily_prices_volume.4d6a84712a' was left open.
+[0m23:32:43.218382 [debug] [MainThread]: On test.sb_finance_project.not_null_stg_fact_daily_prices_volume.4d6a84712a: Close
+[0m23:32:43.220392 [info ] [MainThread]: 
+[0m23:32:43.221391 [info ] [MainThread]: Finished running 7 data tests in 0 hours 0 minutes and 2.21 seconds (2.21s).
+[0m23:32:43.227397 [debug] [MainThread]: Command end result
+[0m23:32:43.296023 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Gabriel Mayol\OneDrive\Documentos\Superintendente de Bancos\sb_data_engineering\dbt\sb_finance_project\target\manifest.json
+[0m23:32:43.300031 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Gabriel Mayol\OneDrive\Documentos\Superintendente de Bancos\sb_data_engineering\dbt\sb_finance_project\target\semantic_manifest.json
+[0m23:32:43.311020 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\Gabriel Mayol\OneDrive\Documentos\Superintendente de Bancos\sb_data_engineering\dbt\sb_finance_project\target\run_results.json
+[0m23:32:43.312021 [info ] [MainThread]: 
+[0m23:32:43.313018 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m23:32:43.313018 [info ] [MainThread]: 
+[0m23:32:43.314020 [info ] [MainThread]: Done. PASS=7 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=7
+[0m23:32:43.316021 [debug] [MainThread]: Command `dbt test` succeeded at 23:32:43.316021 after 4.02 seconds
+[0m23:32:43.317018 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001724F549D30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001724F095B80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001724F094110>]}
+[0m23:32:43.318021 [debug] [MainThread]: Flushing usage events
+[0m23:32:44.111388 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m01:11:41.660387 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000248C4C18B30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000248C45AB0E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000248C4C18230>]}
+
+
+============================== 01:11:41.669806 | 13585fb2-4889-4bcc-818f-982be0d16b39 ==============================
+[0m01:11:41.669806 [info ] [MainThread]: Running with dbt=1.11.8
+[0m01:11:41.671360 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\Gabriel Mayol\\OneDrive\\Documentos\\Superintendente de Bancos\\sb_data_engineering\\dbt\\sb_finance_project', 'use_colors': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt debug', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\Gabriel Mayol\\OneDrive\\Documentos\\Superintendente de Bancos\\sb_data_engineering\\dbt\\sb_finance_project\\logs'}
+[0m01:11:41.708328 [info ] [MainThread]: dbt version: 1.11.8
+[0m01:11:41.709326 [info ] [MainThread]: python version: 3.12.3
+[0m01:11:41.710326 [info ] [MainThread]: python path: C:\Users\Gabriel Mayol\OneDrive\Documentos\Superintendente de Bancos\sb_data_engineering\.venv\Scripts\python.exe
+[0m01:11:41.710326 [info ] [MainThread]: os info: Windows-10-10.0.19045-SP0
+[0m01:11:41.832329 [info ] [MainThread]: Using profiles dir at C:\Users\Gabriel Mayol\OneDrive\Documentos\Superintendente de Bancos\sb_data_engineering\dbt\sb_finance_project
+[0m01:11:41.833327 [info ] [MainThread]: Using profiles.yml file at C:\Users\Gabriel Mayol\OneDrive\Documentos\Superintendente de Bancos\sb_data_engineering\dbt\sb_finance_project\profiles.yml
+[0m01:11:41.834330 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\Gabriel Mayol\OneDrive\Documentos\Superintendente de Bancos\sb_data_engineering\dbt\sb_finance_project\dbt_project.yml
+[0m01:11:41.836340 [info ] [MainThread]: adapter type: clickhouse
+[0m01:11:41.837330 [info ] [MainThread]: adapter version: 1.10.0
+[0m01:11:42.003328 [info ] [MainThread]: Configuration:
+[0m01:11:42.004329 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m01:11:42.005328 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m01:11:42.006331 [info ] [MainThread]: Required dependencies:
+[0m01:11:42.007332 [debug] [MainThread]: Executing "git --help"
+[0m01:11:42.066333 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m01:11:42.067326 [debug] [MainThread]: STDERR: "b''"
+[0m01:11:42.068330 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m01:11:42.069332 [info ] [MainThread]: Connection:
+[0m01:11:42.069332 [info ] [MainThread]:   driver: None
+[0m01:11:42.070331 [info ] [MainThread]:   host: localhost
+[0m01:11:42.071329 [info ] [MainThread]:   port: 8123
+[0m01:11:42.072329 [info ] [MainThread]:   user: default
+[0m01:11:42.073330 [info ] [MainThread]:   schema: gobierno_datos_olap
+[0m01:11:42.073330 [info ] [MainThread]:   retries: 1
+[0m01:11:42.074330 [info ] [MainThread]:   cluster: None
+[0m01:11:42.075332 [info ] [MainThread]:   database_engine: None
+[0m01:11:42.076332 [info ] [MainThread]:   cluster_mode: False
+[0m01:11:42.077329 [info ] [MainThread]:   secure: False
+[0m01:11:42.078332 [info ] [MainThread]:   verify: False
+[0m01:11:42.079333 [info ] [MainThread]:   client_cert: None
+[0m01:11:42.079333 [info ] [MainThread]:   client_cert_key: None
+[0m01:11:42.080327 [info ] [MainThread]:   connect_timeout: 10
+[0m01:11:42.081331 [info ] [MainThread]:   send_receive_timeout: 300
+[0m01:11:42.083332 [info ] [MainThread]:   sync_request_timeout: 5
+[0m01:11:42.084336 [info ] [MainThread]:   compress_block_size: 1048576
+[0m01:11:42.085333 [info ] [MainThread]:   compression: 
+[0m01:11:42.086329 [info ] [MainThread]:   check_exchange: True
+[0m01:11:42.087331 [info ] [MainThread]:   custom_settings: None
+[0m01:11:42.088330 [info ] [MainThread]:   use_lw_deletes: False
+[0m01:11:42.090332 [info ] [MainThread]:   allow_automatic_deduplication: False
+[0m01:11:42.091329 [info ] [MainThread]:   tcp_keepalive: False
+[0m01:11:42.092332 [info ] [MainThread]: Registered adapter: clickhouse=1.10.0
+[0m01:11:42.890424 [debug] [MainThread]: Acquiring new clickhouse connection 'debug'
+[0m01:11:42.891424 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m01:11:43.948684 [debug] [MainThread]: dbt_clickhouse adapter: On debug: select 1 as id...
+[0m01:11:44.001847 [debug] [MainThread]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
+[0m01:11:44.221309 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m01:11:44.222309 [info ] [MainThread]: [32mAll checks passed![0m
+[0m01:11:44.224310 [debug] [MainThread]: Command `dbt debug` succeeded at 01:11:44.224310 after 2.83 seconds
+[0m01:11:44.225309 [debug] [MainThread]: Connection 'debug' was left open.
+[0m01:11:44.225309 [debug] [MainThread]: On debug: Close
+[0m01:11:44.226309 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000248C4763230>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000248C5E502C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000248C654BE30>]}
+[0m01:11:44.227309 [debug] [MainThread]: Flushing usage events
+[0m01:11:45.116148 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m01:11:49.621985 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029390688F80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000293906898E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029390688BF0>]}
+
+
+============================== 01:11:49.628984 | 2c67b545-d19e-4f8a-a090-b1e7d9c3dcfb ==============================
+[0m01:11:49.628984 [info ] [MainThread]: Running with dbt=1.11.8
+[0m01:11:49.629985 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\Gabriel Mayol\\OneDrive\\Documentos\\Superintendente de Bancos\\sb_data_engineering\\dbt\\sb_finance_project', 'invocation_command': 'dbt run', 'indirect_selection': 'eager', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\Gabriel Mayol\\OneDrive\\Documentos\\Superintendente de Bancos\\sb_data_engineering\\dbt\\sb_finance_project\\logs'}
+[0m01:11:50.161254 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '2c67b545-d19e-4f8a-a090-b1e7d9c3dcfb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029391F7C3E0>]}
+[0m01:11:50.274398 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '2c67b545-d19e-4f8a-a090-b1e7d9c3dcfb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029391F7D760>]}
+[0m01:11:50.276400 [info ] [MainThread]: Registered adapter: clickhouse=1.10.0
+[0m01:11:50.828322 [debug] [MainThread]: checksum: 7d524ac048c2100769df89d592e662e060a73ca564e31bd9c2a37efdfe8d8ab6, vars: {}, profile: , target: , version: 1.11.8
+[0m01:11:52.914769 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m01:11:52.915769 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m01:11:52.916771 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m01:11:52.992901 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '2c67b545-d19e-4f8a-a090-b1e7d9c3dcfb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000293923CDE20>]}
+[0m01:11:53.160268 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Gabriel Mayol\OneDrive\Documentos\Superintendente de Bancos\sb_data_engineering\dbt\sb_finance_project\target\manifest.json
+[0m01:11:53.224397 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Gabriel Mayol\OneDrive\Documentos\Superintendente de Bancos\sb_data_engineering\dbt\sb_finance_project\target\semantic_manifest.json
+[0m01:11:53.253477 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '2c67b545-d19e-4f8a-a090-b1e7d9c3dcfb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029392431940>]}
+[0m01:11:53.254477 [info ] [MainThread]: Found 2 models, 7 data tests, 5 sources, 523 macros
+[0m01:11:53.255479 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '2c67b545-d19e-4f8a-a090-b1e7d9c3dcfb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000293923DBD40>]}
+[0m01:11:53.259476 [info ] [MainThread]: 
+[0m01:11:53.260475 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m01:11:53.261475 [info ] [MainThread]: 
+[0m01:11:53.262479 [debug] [MainThread]: Acquiring new clickhouse connection 'master'
+[0m01:11:53.275478 [debug] [ThreadPool]: Acquiring new clickhouse connection 'list_'
+[0m01:11:53.295476 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m01:11:53.998418 [debug] [ThreadPool]: dbt_clickhouse adapter: On list_: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "sb_finance_project", "target_name": "dev", "connection_name": "list_"} */
+
+    select name from system.databases
+  ...
+[0m01:11:54.047925 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
+[0m01:11:54.075529 [debug] [ThreadPool]: Acquiring new clickhouse connection 'list__gobierno_datos_olap'
+[0m01:11:54.087551 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m01:11:54.630788 [debug] [ThreadPool]: dbt_clickhouse adapter: On list__gobierno_datos_olap: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "sb_finance_project", "target_name": "dev", "connection_name": "list__gobierno_datos_olap"} */
+with mv_sources as (
+      -- Find all MVs and their target tables (database and name of the MV, plus the SELECT SQL)
+      select
+        name as mv_name,
+        database as mv_database,
+        any(as_select) as mv_sql,
+        any(replaceRegexpOne(create_table_query, '.*TO\\s+`?([^`\\s(]+)`?\\.`?([^`\\s(]+)`?.*', '\\1.\\2')) as target_fqn
+      
+      from system.tables
+      
+      where engine = 'MaterializedView'
+        and create_table_query like '%TO %'
+      group by mv_name, mv_database
+    )
+    select
+      t.name as name,
+      t.database as schema,
+      multiIf(
+        t.engine = 'MaterializedView', 'materialized_view',
+        t.engine = 'View', 'view',
+        t.engine = 'Dictionary', 'dictionary',
+        'table'
+      ) as type,
+      db.engine as db_engine,
+      groupArrayIf(
+        map('schema', mv_sources.mv_database, 'name', mv_sources.mv_name, 'sql', mv_sources.mv_sql),
+        mv_sources.mv_name != ''
+      ) as mvs_pointing_to_it,0 as is_on_cluster
+        from system.tables as t
+      
+        join system.databases as db on t.database = db.name
+        left join mv_sources on mv_sources.target_fqn = concat(t.database, '.', t.name)
+      where schema = 'gobierno_datos_olap'
+      group by name, schema, type, db_engine
+
+  ...
+[0m01:11:54.902634 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.27 seconds
+[0m01:11:54.907629 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '2c67b545-d19e-4f8a-a090-b1e7d9c3dcfb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029392129D00>]}
+[0m01:11:54.916398 [debug] [Thread-1 (]: Began running node model.sb_finance_project.monthly_stock_summary
+[0m01:11:54.918401 [info ] [Thread-1 (]: 1 of 2 START sql table model `gobierno_datos_olap`.`monthly_stock_summary` ..... [RUN]
+[0m01:11:54.919399 [debug] [Thread-1 (]: Acquiring new clickhouse connection 'model.sb_finance_project.monthly_stock_summary'
+[0m01:11:54.920399 [debug] [Thread-1 (]: Began compiling node model.sb_finance_project.monthly_stock_summary
+[0m01:11:54.930398 [debug] [Thread-1 (]: Writing injected SQL for node "model.sb_finance_project.monthly_stock_summary"
+[0m01:11:54.931398 [debug] [Thread-1 (]: Began executing node model.sb_finance_project.monthly_stock_summary
+[0m01:11:55.136500 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m01:11:55.655541 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.sb_finance_project.monthly_stock_summary: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "sb_finance_project", "target_name": "dev", "node_id": "model.sb_finance_project.monthly_stock_summary"} */
+
+            
+
+    
+        create table `gobierno_datos_olap`.`monthly_stock_summary__dbt_backup`
+        
+  
+        
+  engine = MergeTree()
+        
+      order by (tuple())
+        
+        
+        
+        
+                    -- end_of_sql
+                    SETTINGS replicated_deduplication_window='0'
+
+                    
+            empty
+          as (
+            select
+    ticker,
+    toYear(trade_date) as year,
+    toMonth(trade_date) as month,
+    avg(open_price) as avg_open_price,
+    avg(close_price) as avg_close_price,
+    avg(volume) as avg_volume
+from gobierno_datos_olap.fact_daily_prices
+group by
+    ticker,
+    toYear(trade_date),
+    toMonth(trade_date)
+          )
+        
+        ...
+[0m01:11:55.724800 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.07 seconds
+[0m01:11:55.772424 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.sb_finance_project.monthly_stock_summary: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "sb_finance_project", "target_name": "dev", "node_id": "model.sb_finance_project.monthly_stock_summary"} */
+
+    select name, type from system.columns where table = 'monthly_stock_summary__dbt_backup'
+    
+      
+        and database = 'gobierno_datos_olap'
+      
+    
+    order by position
+  ...
+[0m01:11:55.865378 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.09 seconds
+[0m01:11:55.880376 [debug] [Thread-1 (]: Writing runtime sql for node "model.sb_finance_project.monthly_stock_summary"
+[0m01:11:55.886381 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.sb_finance_project.monthly_stock_summary: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "sb_finance_project", "target_name": "dev", "node_id": "model.sb_finance_project.monthly_stock_summary"} */
+
+  
+    
+    
+    
+        
+         
+
+
+        
+  
+
+  insert into `gobierno_datos_olap`.`monthly_stock_summary__dbt_backup`
+        ("ticker", "year", "month", "avg_open_price", "avg_close_price", "avg_volume")select
+    ticker,
+    toYear(trade_date) as year,
+    toMonth(trade_date) as month,
+    avg(open_price) as avg_open_price,
+    avg(close_price) as avg_close_price,
+    avg(volume) as avg_volume
+from gobierno_datos_olap.fact_daily_prices
+group by
+    ticker,
+    toYear(trade_date),
+    toMonth(trade_date)
+  ...
+[0m01:11:55.909369 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.02 seconds
+[0m01:11:55.917371 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.sb_finance_project.monthly_stock_summary: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "sb_finance_project", "target_name": "dev", "node_id": "model.sb_finance_project.monthly_stock_summary"} */
+EXCHANGE TABLES `gobierno_datos_olap`.`monthly_stock_summary__dbt_backup` AND `gobierno_datos_olap`.`monthly_stock_summary` 
+  
+  ...
+[0m01:11:55.962413 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.04 seconds
+[0m01:11:56.020716 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.sb_finance_project.monthly_stock_summary: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "sb_finance_project", "target_name": "dev", "node_id": "model.sb_finance_project.monthly_stock_summary"} */
+drop table if exists `gobierno_datos_olap`.`monthly_stock_summary__dbt_backup` 
+  ...
+[0m01:11:56.070283 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
+[0m01:11:56.083288 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '2c67b545-d19e-4f8a-a090-b1e7d9c3dcfb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002938D96C170>]}
+[0m01:11:56.086281 [info ] [Thread-1 (]: 1 of 2 OK created sql table model `gobierno_datos_olap`.`monthly_stock_summary`  [[32mOK[0m in 1.16s]
+[0m01:11:56.088274 [debug] [Thread-1 (]: Finished running node model.sb_finance_project.monthly_stock_summary
+[0m01:11:56.089274 [debug] [Thread-1 (]: Began running node model.sb_finance_project.stg_fact_daily_prices
+[0m01:11:56.091275 [info ] [Thread-1 (]: 2 of 2 START sql view model `gobierno_datos_olap`.`stg_fact_daily_prices` ...... [RUN]
+[0m01:11:56.092924 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.sb_finance_project.monthly_stock_summary, now model.sb_finance_project.stg_fact_daily_prices)
+[0m01:11:56.093924 [debug] [Thread-1 (]: Began compiling node model.sb_finance_project.stg_fact_daily_prices
+[0m01:11:56.097922 [debug] [Thread-1 (]: Writing injected SQL for node "model.sb_finance_project.stg_fact_daily_prices"
+[0m01:11:56.100925 [debug] [Thread-1 (]: Began executing node model.sb_finance_project.stg_fact_daily_prices
+[0m01:11:56.120922 [debug] [Thread-1 (]: Relation stg_fact_daily_prices already exists, replacing it
+[0m01:11:56.142909 [debug] [Thread-1 (]: Model mvs to replace ['stg_fact_daily_prices_mv']
+[0m01:11:56.146909 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.sb_finance_project.stg_fact_daily_prices: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "sb_finance_project", "target_name": "dev", "node_id": "model.sb_finance_project.stg_fact_daily_prices"} */
+
+    
+    select name
+    from system.tables
+    where engine = 'MaterializedView'
+      and extract(create_table_query, 'TO\\s+([^\\s(]+)') = 'gobierno_datos_olap.stg_fact_daily_prices'
+  
+  ...
+[0m01:11:56.199910 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
+[0m01:11:56.224519 [debug] [Thread-1 (]: Writing runtime sql for node "model.sb_finance_project.stg_fact_daily_prices"
+[0m01:11:56.226519 [debug] [Thread-1 (]: dbt_clickhouse adapter: On model.sb_finance_project.stg_fact_daily_prices: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "sb_finance_project", "target_name": "dev", "node_id": "model.sb_finance_project.stg_fact_daily_prices"} */
+
+
+  create or replace view `gobierno_datos_olap`.`stg_fact_daily_prices` 
+  
+    
+  
+  
+    
+    
+  as (
+    select
+    ticker,
+    trade_date,
+    open_price,
+    high_price,
+    low_price,
+    close_price,
+    volume
+from gobierno_datos_olap.fact_daily_prices
+    
+  )
+      
+      
+                    -- end_of_sql
+                    
+                    ...
+[0m01:11:56.284518 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.06 seconds
+[0m01:11:56.291517 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '2c67b545-d19e-4f8a-a090-b1e7d9c3dcfb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029392FD9790>]}
+[0m01:11:56.293516 [info ] [Thread-1 (]: 2 of 2 OK created sql view model `gobierno_datos_olap`.`stg_fact_daily_prices` . [[32mOK[0m in 0.20s]
+[0m01:11:56.296533 [debug] [Thread-1 (]: Finished running node model.sb_finance_project.stg_fact_daily_prices
+[0m01:11:56.302148 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m01:11:56.303145 [debug] [MainThread]: Connection 'list_' was left open.
+[0m01:11:56.305142 [debug] [MainThread]: On list_: Close
+[0m01:11:56.306147 [debug] [MainThread]: Connection 'list__gobierno_datos_olap' was left open.
+[0m01:11:56.307147 [debug] [MainThread]: On list__gobierno_datos_olap: Close
+[0m01:11:56.309147 [debug] [MainThread]: Connection 'model.sb_finance_project.stg_fact_daily_prices' was left open.
+[0m01:11:56.310148 [debug] [MainThread]: On model.sb_finance_project.stg_fact_daily_prices: Close
+[0m01:11:56.313147 [info ] [MainThread]: 
+[0m01:11:56.316151 [info ] [MainThread]: Finished running 1 table model, 1 view model in 0 hours 0 minutes and 3.05 seconds (3.05s).
+[0m01:11:56.320143 [debug] [MainThread]: Command end result
+[0m01:11:56.388735 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Gabriel Mayol\OneDrive\Documentos\Superintendente de Bancos\sb_data_engineering\dbt\sb_finance_project\target\manifest.json
+[0m01:11:56.393730 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Gabriel Mayol\OneDrive\Documentos\Superintendente de Bancos\sb_data_engineering\dbt\sb_finance_project\target\semantic_manifest.json
+[0m01:11:56.402732 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\Gabriel Mayol\OneDrive\Documentos\Superintendente de Bancos\sb_data_engineering\dbt\sb_finance_project\target\run_results.json
+[0m01:11:56.403730 [info ] [MainThread]: 
+[0m01:11:56.404328 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m01:11:56.405352 [info ] [MainThread]: 
+[0m01:11:56.406343 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+[0m01:11:56.408419 [debug] [MainThread]: Command `dbt run` succeeded at 01:11:56.408419 after 6.97 seconds
+[0m01:11:56.408927 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029392EB4830>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000293924288C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002939242BB90>]}
+[0m01:11:56.409938 [debug] [MainThread]: Flushing usage events
+[0m01:11:57.296202 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m01:12:01.479783 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018887B73470>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001888AED2B10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001888AED22A0>]}
+
+
+============================== 01:12:01.487783 | 5761d43f-25df-4375-a7e4-9666c01ac8fe ==============================
+[0m01:12:01.487783 [info ] [MainThread]: Running with dbt=1.11.8
+[0m01:12:01.488830 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\Gabriel Mayol\\OneDrive\\Documentos\\Superintendente de Bancos\\sb_data_engineering\\dbt\\sb_finance_project', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt test', 'indirect_selection': 'eager', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\Gabriel Mayol\\OneDrive\\Documentos\\Superintendente de Bancos\\sb_data_engineering\\dbt\\sb_finance_project\\logs'}
+[0m01:12:01.846831 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '5761d43f-25df-4375-a7e4-9666c01ac8fe', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001888CB57E90>]}
+[0m01:12:01.950826 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '5761d43f-25df-4375-a7e4-9666c01ac8fe', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001888B2EEB70>]}
+[0m01:12:01.953831 [info ] [MainThread]: Registered adapter: clickhouse=1.10.0
+[0m01:12:02.461133 [debug] [MainThread]: checksum: 7d524ac048c2100769df89d592e662e060a73ca564e31bd9c2a37efdfe8d8ab6, vars: {}, profile: , target: , version: 1.11.8
+[0m01:12:02.706349 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m01:12:02.707350 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m01:12:02.708350 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m01:12:02.784957 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '5761d43f-25df-4375-a7e4-9666c01ac8fe', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001888CFBD6A0>]}
+[0m01:12:02.943858 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Gabriel Mayol\OneDrive\Documentos\Superintendente de Bancos\sb_data_engineering\dbt\sb_finance_project\target\manifest.json
+[0m01:12:02.947858 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Gabriel Mayol\OneDrive\Documentos\Superintendente de Bancos\sb_data_engineering\dbt\sb_finance_project\target\semantic_manifest.json
+[0m01:12:02.990507 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '5761d43f-25df-4375-a7e4-9666c01ac8fe', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001888D2FF740>]}
+[0m01:12:02.991509 [info ] [MainThread]: Found 2 models, 7 data tests, 5 sources, 523 macros
+[0m01:12:02.992509 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '5761d43f-25df-4375-a7e4-9666c01ac8fe', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001888CFBDDF0>]}
+[0m01:12:02.995507 [info ] [MainThread]: 
+[0m01:12:02.996460 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m01:12:02.997476 [info ] [MainThread]: 
+[0m01:12:02.998477 [debug] [MainThread]: Acquiring new clickhouse connection 'master'
+[0m01:12:03.011625 [debug] [ThreadPool]: Acquiring new clickhouse connection 'list__gobierno_datos_olap'
+[0m01:12:03.033278 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m01:12:03.776616 [debug] [ThreadPool]: dbt_clickhouse adapter: On list__gobierno_datos_olap: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "sb_finance_project", "target_name": "dev", "connection_name": "list__gobierno_datos_olap"} */
+with mv_sources as (
+      -- Find all MVs and their target tables (database and name of the MV, plus the SELECT SQL)
+      select
+        name as mv_name,
+        database as mv_database,
+        any(as_select) as mv_sql,
+        any(replaceRegexpOne(create_table_query, '.*TO\\s+`?([^`\\s(]+)`?\\.`?([^`\\s(]+)`?.*', '\\1.\\2')) as target_fqn
+      
+      from system.tables
+      
+      where engine = 'MaterializedView'
+        and create_table_query like '%TO %'
+      group by mv_name, mv_database
+    )
+    select
+      t.name as name,
+      t.database as schema,
+      multiIf(
+        t.engine = 'MaterializedView', 'materialized_view',
+        t.engine = 'View', 'view',
+        t.engine = 'Dictionary', 'dictionary',
+        'table'
+      ) as type,
+      db.engine as db_engine,
+      groupArrayIf(
+        map('schema', mv_sources.mv_database, 'name', mv_sources.mv_name, 'sql', mv_sources.mv_sql),
+        mv_sources.mv_name != ''
+      ) as mvs_pointing_to_it,0 as is_on_cluster
+        from system.tables as t
+      
+        join system.databases as db on t.database = db.name
+        left join mv_sources on mv_sources.target_fqn = concat(t.database, '.', t.name)
+      where schema = 'gobierno_datos_olap'
+      group by name, schema, type, db_engine
+
+  ...
+[0m01:12:03.855483 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.08 seconds
+[0m01:12:03.886483 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '5761d43f-25df-4375-a7e4-9666c01ac8fe', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001888CFBDA60>]}
+[0m01:12:03.892485 [debug] [Thread-1 (]: Began running node test.sb_finance_project.not_null_stg_fact_daily_prices_close_price.555545c23b
+[0m01:12:03.893480 [info ] [Thread-1 (]: 1 of 7 START test not_null_stg_fact_daily_prices_close_price ................... [RUN]
+[0m01:12:03.895481 [debug] [Thread-1 (]: Acquiring new clickhouse connection 'test.sb_finance_project.not_null_stg_fact_daily_prices_close_price.555545c23b'
+[0m01:12:03.895481 [debug] [Thread-1 (]: Began compiling node test.sb_finance_project.not_null_stg_fact_daily_prices_close_price.555545c23b
+[0m01:12:03.928480 [debug] [Thread-1 (]: Writing injected SQL for node "test.sb_finance_project.not_null_stg_fact_daily_prices_close_price.555545c23b"
+[0m01:12:03.930480 [debug] [Thread-1 (]: Began executing node test.sb_finance_project.not_null_stg_fact_daily_prices_close_price.555545c23b
+[0m01:12:04.044564 [debug] [Thread-1 (]: Writing runtime sql for node "test.sb_finance_project.not_null_stg_fact_daily_prices_close_price.555545c23b"
+[0m01:12:04.047086 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m01:12:04.582314 [debug] [Thread-1 (]: dbt_clickhouse adapter: On test.sb_finance_project.not_null_stg_fact_daily_prices_close_price.555545c23b: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "sb_finance_project", "target_name": "dev", "node_id": "test.sb_finance_project.not_null_stg_fact_daily_prices_close_price.555545c23b"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select close_price
+from `gobierno_datos_olap`.`stg_fact_daily_prices`
+where close_price is null
+
+
+
+  
+  
+    ) dbt_internal_test...
+[0m01:12:04.645479 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.06 seconds
+[0m01:12:04.653483 [info ] [Thread-1 (]: 1 of 7 PASS not_null_stg_fact_daily_prices_close_price ......................... [[32mPASS[0m in 0.76s]
+[0m01:12:04.655487 [debug] [Thread-1 (]: Finished running node test.sb_finance_project.not_null_stg_fact_daily_prices_close_price.555545c23b
+[0m01:12:04.657480 [debug] [Thread-1 (]: Began running node test.sb_finance_project.not_null_stg_fact_daily_prices_high_price.5f9df5784a
+[0m01:12:04.658481 [info ] [Thread-1 (]: 2 of 7 START test not_null_stg_fact_daily_prices_high_price .................... [RUN]
+[0m01:12:04.660483 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.sb_finance_project.not_null_stg_fact_daily_prices_close_price.555545c23b, now test.sb_finance_project.not_null_stg_fact_daily_prices_high_price.5f9df5784a)
+[0m01:12:04.660483 [debug] [Thread-1 (]: Began compiling node test.sb_finance_project.not_null_stg_fact_daily_prices_high_price.5f9df5784a
+[0m01:12:04.673483 [debug] [Thread-1 (]: Writing injected SQL for node "test.sb_finance_project.not_null_stg_fact_daily_prices_high_price.5f9df5784a"
+[0m01:12:04.676490 [debug] [Thread-1 (]: Began executing node test.sb_finance_project.not_null_stg_fact_daily_prices_high_price.5f9df5784a
+[0m01:12:04.681481 [debug] [Thread-1 (]: Writing runtime sql for node "test.sb_finance_project.not_null_stg_fact_daily_prices_high_price.5f9df5784a"
+[0m01:12:04.684485 [debug] [Thread-1 (]: dbt_clickhouse adapter: On test.sb_finance_project.not_null_stg_fact_daily_prices_high_price.5f9df5784a: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "sb_finance_project", "target_name": "dev", "node_id": "test.sb_finance_project.not_null_stg_fact_daily_prices_high_price.5f9df5784a"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select high_price
+from `gobierno_datos_olap`.`stg_fact_daily_prices`
+where high_price is null
+
+
+
+  
+  
+    ) dbt_internal_test...
+[0m01:12:04.740485 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
+[0m01:12:04.743481 [info ] [Thread-1 (]: 2 of 7 PASS not_null_stg_fact_daily_prices_high_price .......................... [[32mPASS[0m in 0.08s]
+[0m01:12:04.745484 [debug] [Thread-1 (]: Finished running node test.sb_finance_project.not_null_stg_fact_daily_prices_high_price.5f9df5784a
+[0m01:12:04.746485 [debug] [Thread-1 (]: Began running node test.sb_finance_project.not_null_stg_fact_daily_prices_low_price.34cfd31e0e
+[0m01:12:04.747485 [info ] [Thread-1 (]: 3 of 7 START test not_null_stg_fact_daily_prices_low_price ..................... [RUN]
+[0m01:12:04.748481 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.sb_finance_project.not_null_stg_fact_daily_prices_high_price.5f9df5784a, now test.sb_finance_project.not_null_stg_fact_daily_prices_low_price.34cfd31e0e)
+[0m01:12:04.749487 [debug] [Thread-1 (]: Began compiling node test.sb_finance_project.not_null_stg_fact_daily_prices_low_price.34cfd31e0e
+[0m01:12:04.760482 [debug] [Thread-1 (]: Writing injected SQL for node "test.sb_finance_project.not_null_stg_fact_daily_prices_low_price.34cfd31e0e"
+[0m01:12:04.763482 [debug] [Thread-1 (]: Began executing node test.sb_finance_project.not_null_stg_fact_daily_prices_low_price.34cfd31e0e
+[0m01:12:04.770482 [debug] [Thread-1 (]: Writing runtime sql for node "test.sb_finance_project.not_null_stg_fact_daily_prices_low_price.34cfd31e0e"
+[0m01:12:04.773484 [debug] [Thread-1 (]: dbt_clickhouse adapter: On test.sb_finance_project.not_null_stg_fact_daily_prices_low_price.34cfd31e0e: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "sb_finance_project", "target_name": "dev", "node_id": "test.sb_finance_project.not_null_stg_fact_daily_prices_low_price.34cfd31e0e"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select low_price
+from `gobierno_datos_olap`.`stg_fact_daily_prices`
+where low_price is null
+
+
+
+  
+  
+    ) dbt_internal_test...
+[0m01:12:04.827069 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
+[0m01:12:04.830073 [info ] [Thread-1 (]: 3 of 7 PASS not_null_stg_fact_daily_prices_low_price ........................... [[32mPASS[0m in 0.08s]
+[0m01:12:04.832072 [debug] [Thread-1 (]: Finished running node test.sb_finance_project.not_null_stg_fact_daily_prices_low_price.34cfd31e0e
+[0m01:12:04.834072 [debug] [Thread-1 (]: Began running node test.sb_finance_project.not_null_stg_fact_daily_prices_open_price.d0a08f9acd
+[0m01:12:04.836070 [info ] [Thread-1 (]: 4 of 7 START test not_null_stg_fact_daily_prices_open_price .................... [RUN]
+[0m01:12:04.837070 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.sb_finance_project.not_null_stg_fact_daily_prices_low_price.34cfd31e0e, now test.sb_finance_project.not_null_stg_fact_daily_prices_open_price.d0a08f9acd)
+[0m01:12:04.838070 [debug] [Thread-1 (]: Began compiling node test.sb_finance_project.not_null_stg_fact_daily_prices_open_price.d0a08f9acd
+[0m01:12:04.845708 [debug] [Thread-1 (]: Writing injected SQL for node "test.sb_finance_project.not_null_stg_fact_daily_prices_open_price.d0a08f9acd"
+[0m01:12:04.847705 [debug] [Thread-1 (]: Began executing node test.sb_finance_project.not_null_stg_fact_daily_prices_open_price.d0a08f9acd
+[0m01:12:04.851707 [debug] [Thread-1 (]: Writing runtime sql for node "test.sb_finance_project.not_null_stg_fact_daily_prices_open_price.d0a08f9acd"
+[0m01:12:04.853704 [debug] [Thread-1 (]: dbt_clickhouse adapter: On test.sb_finance_project.not_null_stg_fact_daily_prices_open_price.d0a08f9acd: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "sb_finance_project", "target_name": "dev", "node_id": "test.sb_finance_project.not_null_stg_fact_daily_prices_open_price.d0a08f9acd"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select open_price
+from `gobierno_datos_olap`.`stg_fact_daily_prices`
+where open_price is null
+
+
+
+  
+  
+    ) dbt_internal_test...
+[0m01:12:04.907715 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
+[0m01:12:04.910707 [info ] [Thread-1 (]: 4 of 7 PASS not_null_stg_fact_daily_prices_open_price .......................... [[32mPASS[0m in 0.07s]
+[0m01:12:04.911707 [debug] [Thread-1 (]: Finished running node test.sb_finance_project.not_null_stg_fact_daily_prices_open_price.d0a08f9acd
+[0m01:12:04.912708 [debug] [Thread-1 (]: Began running node test.sb_finance_project.not_null_stg_fact_daily_prices_ticker.2554851c99
+[0m01:12:04.913707 [info ] [Thread-1 (]: 5 of 7 START test not_null_stg_fact_daily_prices_ticker ........................ [RUN]
+[0m01:12:04.915707 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.sb_finance_project.not_null_stg_fact_daily_prices_open_price.d0a08f9acd, now test.sb_finance_project.not_null_stg_fact_daily_prices_ticker.2554851c99)
+[0m01:12:04.916707 [debug] [Thread-1 (]: Began compiling node test.sb_finance_project.not_null_stg_fact_daily_prices_ticker.2554851c99
+[0m01:12:04.924707 [debug] [Thread-1 (]: Writing injected SQL for node "test.sb_finance_project.not_null_stg_fact_daily_prices_ticker.2554851c99"
+[0m01:12:04.926709 [debug] [Thread-1 (]: Began executing node test.sb_finance_project.not_null_stg_fact_daily_prices_ticker.2554851c99
+[0m01:12:04.933706 [debug] [Thread-1 (]: Writing runtime sql for node "test.sb_finance_project.not_null_stg_fact_daily_prices_ticker.2554851c99"
+[0m01:12:04.936708 [debug] [Thread-1 (]: dbt_clickhouse adapter: On test.sb_finance_project.not_null_stg_fact_daily_prices_ticker.2554851c99: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "sb_finance_project", "target_name": "dev", "node_id": "test.sb_finance_project.not_null_stg_fact_daily_prices_ticker.2554851c99"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select ticker
+from `gobierno_datos_olap`.`stg_fact_daily_prices`
+where ticker is null
+
+
+
+  
+  
+    ) dbt_internal_test...
+[0m01:12:04.992309 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
+[0m01:12:04.995311 [info ] [Thread-1 (]: 5 of 7 PASS not_null_stg_fact_daily_prices_ticker .............................. [[32mPASS[0m in 0.08s]
+[0m01:12:04.996311 [debug] [Thread-1 (]: Finished running node test.sb_finance_project.not_null_stg_fact_daily_prices_ticker.2554851c99
+[0m01:12:04.997312 [debug] [Thread-1 (]: Began running node test.sb_finance_project.not_null_stg_fact_daily_prices_trade_date.ea40d08156
+[0m01:12:04.998311 [info ] [Thread-1 (]: 6 of 7 START test not_null_stg_fact_daily_prices_trade_date .................... [RUN]
+[0m01:12:04.999313 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.sb_finance_project.not_null_stg_fact_daily_prices_ticker.2554851c99, now test.sb_finance_project.not_null_stg_fact_daily_prices_trade_date.ea40d08156)
+[0m01:12:05.000308 [debug] [Thread-1 (]: Began compiling node test.sb_finance_project.not_null_stg_fact_daily_prices_trade_date.ea40d08156
+[0m01:12:05.006310 [debug] [Thread-1 (]: Writing injected SQL for node "test.sb_finance_project.not_null_stg_fact_daily_prices_trade_date.ea40d08156"
+[0m01:12:05.009309 [debug] [Thread-1 (]: Began executing node test.sb_finance_project.not_null_stg_fact_daily_prices_trade_date.ea40d08156
+[0m01:12:05.012313 [debug] [Thread-1 (]: Writing runtime sql for node "test.sb_finance_project.not_null_stg_fact_daily_prices_trade_date.ea40d08156"
+[0m01:12:05.015312 [debug] [Thread-1 (]: dbt_clickhouse adapter: On test.sb_finance_project.not_null_stg_fact_daily_prices_trade_date.ea40d08156: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "sb_finance_project", "target_name": "dev", "node_id": "test.sb_finance_project.not_null_stg_fact_daily_prices_trade_date.ea40d08156"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select trade_date
+from `gobierno_datos_olap`.`stg_fact_daily_prices`
+where trade_date is null
+
+
+
+  
+  
+    ) dbt_internal_test...
+[0m01:12:05.067909 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
+[0m01:12:05.072905 [info ] [Thread-1 (]: 6 of 7 PASS not_null_stg_fact_daily_prices_trade_date .......................... [[32mPASS[0m in 0.07s]
+[0m01:12:05.074907 [debug] [Thread-1 (]: Finished running node test.sb_finance_project.not_null_stg_fact_daily_prices_trade_date.ea40d08156
+[0m01:12:05.075906 [debug] [Thread-1 (]: Began running node test.sb_finance_project.not_null_stg_fact_daily_prices_volume.4d6a84712a
+[0m01:12:05.076905 [info ] [Thread-1 (]: 7 of 7 START test not_null_stg_fact_daily_prices_volume ........................ [RUN]
+[0m01:12:05.077906 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.sb_finance_project.not_null_stg_fact_daily_prices_trade_date.ea40d08156, now test.sb_finance_project.not_null_stg_fact_daily_prices_volume.4d6a84712a)
+[0m01:12:05.078907 [debug] [Thread-1 (]: Began compiling node test.sb_finance_project.not_null_stg_fact_daily_prices_volume.4d6a84712a
+[0m01:12:05.087908 [debug] [Thread-1 (]: Writing injected SQL for node "test.sb_finance_project.not_null_stg_fact_daily_prices_volume.4d6a84712a"
+[0m01:12:05.089909 [debug] [Thread-1 (]: Began executing node test.sb_finance_project.not_null_stg_fact_daily_prices_volume.4d6a84712a
+[0m01:12:05.095909 [debug] [Thread-1 (]: Writing runtime sql for node "test.sb_finance_project.not_null_stg_fact_daily_prices_volume.4d6a84712a"
+[0m01:12:05.097906 [debug] [Thread-1 (]: dbt_clickhouse adapter: On test.sb_finance_project.not_null_stg_fact_daily_prices_volume.4d6a84712a: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "sb_finance_project", "target_name": "dev", "node_id": "test.sb_finance_project.not_null_stg_fact_daily_prices_volume.4d6a84712a"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select volume
+from `gobierno_datos_olap`.`stg_fact_daily_prices`
+where volume is null
+
+
+
+  
+  
+    ) dbt_internal_test...
+[0m01:12:05.153909 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.06 seconds
+[0m01:12:05.157789 [info ] [Thread-1 (]: 7 of 7 PASS not_null_stg_fact_daily_prices_volume .............................. [[32mPASS[0m in 0.08s]
+[0m01:12:05.159967 [debug] [Thread-1 (]: Finished running node test.sb_finance_project.not_null_stg_fact_daily_prices_volume.4d6a84712a
+[0m01:12:05.162730 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m01:12:05.163828 [debug] [MainThread]: Connection 'list__gobierno_datos_olap' was left open.
+[0m01:12:05.164944 [debug] [MainThread]: On list__gobierno_datos_olap: Close
+[0m01:12:05.165558 [debug] [MainThread]: Connection 'test.sb_finance_project.not_null_stg_fact_daily_prices_volume.4d6a84712a' was left open.
+[0m01:12:05.166662 [debug] [MainThread]: On test.sb_finance_project.not_null_stg_fact_daily_prices_volume.4d6a84712a: Close
+[0m01:12:05.168736 [info ] [MainThread]: 
+[0m01:12:05.169737 [info ] [MainThread]: Finished running 7 data tests in 0 hours 0 minutes and 2.17 seconds (2.17s).
+[0m01:12:05.175736 [debug] [MainThread]: Command end result
+[0m01:12:05.239314 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Gabriel Mayol\OneDrive\Documentos\Superintendente de Bancos\sb_data_engineering\dbt\sb_finance_project\target\manifest.json
+[0m01:12:05.242888 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Gabriel Mayol\OneDrive\Documentos\Superintendente de Bancos\sb_data_engineering\dbt\sb_finance_project\target\semantic_manifest.json
+[0m01:12:05.254886 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\Gabriel Mayol\OneDrive\Documentos\Superintendente de Bancos\sb_data_engineering\dbt\sb_finance_project\target\run_results.json
+[0m01:12:05.255888 [info ] [MainThread]: 
+[0m01:12:05.256891 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m01:12:05.257889 [info ] [MainThread]: 
+[0m01:12:05.258893 [info ] [MainThread]: Done. PASS=7 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=7
+[0m01:12:05.260892 [debug] [MainThread]: Command `dbt test` succeeded at 01:12:05.260892 after 3.97 seconds
+[0m01:12:05.261891 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001888B6406E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001888AC3BEF0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001888AC7D160>]}
+[0m01:12:05.262893 [debug] [MainThread]: Flushing usage events
+[0m01:12:06.386945 [debug] [MainThread]: An error was encountered while trying to flush usage events
