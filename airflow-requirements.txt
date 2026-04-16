@@ -1,8 +1,0 @@
-yfinance
-pandas
-requests
-sqlalchemy==1.4.53
-psycopg2-binary
-clickhouse-sqlalchemy==0.2.5
-clickhouse-driver
-pyyaml

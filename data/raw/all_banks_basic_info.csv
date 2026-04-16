@@ -1,7 +1,0 @@
-ticker,company_name,industry,sector,employee_count,city,phone,state,country,website,address
-JPM,JPMorgan Chase & Co.,Banks - Diversified,Financial Services,320079,New York,212 270 6000,NY,United States,https://www.jpmorganchase.com,270 Park Avenue
-BAC,Bank of America Corporation,Banks - Diversified,Financial Services,213000,Charlotte,(704) 386-5681,NC,United States,https://www.bankofamerica.com,Bank of America Corporate Center
-C,Citigroup Inc.,Banks - Diversified,Financial Services,226000,New York,212 559 1000,NY,United States,https://www.citigroup.com,388 Greenwich Street
-WFC,Wells Fargo & Company,Banks - Diversified,Financial Services,205000,San Francisco,415-371-2921,CA,United States,https://www.wellsfargo.com,333 Market Street
-GS,"The Goldman Sachs Group, Inc.",Capital Markets,Financial Services,47400,New York,212 902 1000,NY,United States,https://www.goldmansachs.com,200 West Street
-MS,Morgan Stanley,Capital Markets,Financial Services,83000,New York,212 761 4000,NY,United States,https://www.morganstanley.com,1585 Broadway
