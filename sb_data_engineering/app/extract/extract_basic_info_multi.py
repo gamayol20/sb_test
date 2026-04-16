@@ -3,6 +3,9 @@ import pandas as pd
 import yfinance as yf
 from pathlib import Path
 
+REQUEST_DELAY_SECONDS = 2
+ERROR_DELAY_SECONDS = 3
+
 tickers = ["JPM", "BAC", "C", "WFC", "GS", "MS"]
 
 rows = []
@@ -31,17 +34,18 @@ for ticker_symbol in tickers:
         rows.append(row)
         print(f"{ticker_symbol}: información extraída correctamente")
 
-        time.sleep(2)
+        time.sleep(REQUEST_DELAY_SECONDS)
 
     except Exception as e:
         print(f"Error con {ticker_symbol}: {e}")
+        time.sleep(ERROR_DELAY_SECONDS)
 
 df = pd.DataFrame(rows)
 
 output_dir = Path("data/raw")
 output_dir.mkdir(parents=True, exist_ok=True)
 
-output_file = output_dir / "all_banks_fundamentals.csv"
+output_file = output_dir / "all_banks_basic_info.csv"
 
 df.to_csv(output_file, index=False)
 

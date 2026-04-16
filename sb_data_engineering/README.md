@@ -141,7 +141,70 @@ Se implementaron pruebas de calidad con DBT sobre el modelo stg_fact_daily_price
 ## Cómo ejecutar el proyecto
 
 1. Clonar el repositorio
-git clone <URL_DEL_REPOSITORIO>
+git clone <https://github.com/gamayol20/sb_test.git>
+cd sb_data_engineering
+
+2. Levantar contenedores
+docker compose up -d
+
+Esto levantará los siguientes servicios:
+
+- PostgreSQL (Landing Zone)
+- ClickHouse (OLAP)
+- Airflow Webserver
+- Airflow Scheduler
+
+3. Acceder a Airflow
+
+Abrir en el navegador:
+
+http://localhost:8080
+
+Credenciales:
+
+- Usuario: admin
+- Contraseña: admin
+
+4. Ejecutar el pipeline
+
+Dentro de Airflow:
+
+Activar el DAG sb_finance_pipeline
+Ejecutar manualmente el DAG
+
+El pipeline ejecuta automáticamente:
+
+- Extracción de datos desde Yahoo Finance
+- Almacenamiento en archivos CSV (data/raw)
+- Carga de datos en PostgreSQL (landing zone)
+- Integración de datos hacia ClickHouse (capa analítica)
+
+5. Validación de carga incremental
+
+Antes de cargar los datos hacia ClickHouse, el proceso valida si existen nuevos registros en la landing zone (PostgreSQL) mediante una tabla de control (etl_control).
+
+Si no se detectan cambios en los datos, la carga hacia ClickHouse se omite, optimizando el proceso.
+
+6. Ejecución de transformaciones y calidad de datos con DBT
+
+Las validaciones y transformaciones se ejecutan de forma independiente desde el proyecto DBT.
+
+- Ubicarse en la carpeta del proyecto:
+
+cd dbt/sb_finance_project
+
+Ejecutar:
+
+dbt debug
+dbt run
+dbt test
+
+## Ejecución manual (opcional)
+
+Para fines de prueba o depuración, los scripts también pueden ejecutarse manualmente:
+
+1. Clonar el repositorio
+git clone <https://github.com/gamayol20/sb_test.git>
 cd sb_data_engineering
 
 2. Crear entorno virtual
@@ -167,6 +230,7 @@ docker compose up -d
 .\.venv\Scripts\python.exe .\app\load\load_clickhouse.py
 
 8. Ejecutar DBT
+cd dbt/sb_finance_project
 dbt debug
 dbt run
 dbt test
@@ -193,8 +257,6 @@ Se construyó un pipeline funcional que permite:
 - Integración de múltiples fuentes de datos
 - Validación de calidad automatizada
 - Explotación analítica eficiente
-
-El pipeline fue validado mediante ejecuciones completas en Airflow, garantizando la automatización del flujo de datos.
 
 ## Resultado final
 

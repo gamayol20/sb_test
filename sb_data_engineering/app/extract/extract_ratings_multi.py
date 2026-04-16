@@ -3,6 +3,9 @@ import time
 import pandas as pd
 import yfinance as yf
 
+REQUEST_DELAY_SECONDS = 2
+ERROR_DELAY_SECONDS = 3
+
 tickers = ["JPM", "BAC", "C", "WFC", "GS", "MS"]
 
 all_rows = []
@@ -35,11 +38,12 @@ for ticker_symbol in tickers:
 
         print(f"{ticker_symbol}: {len(final_df)} ratings extraídos")
 
-        time.sleep(2)
+        time.sleep(REQUEST_DELAY_SECONDS)
 
     except Exception as e:
         print(f"Error con {ticker_symbol}: {e}")
-
+        time.sleep(ERROR_DELAY_SECONDS)
+        
 if all_rows:
     result = pd.concat(all_rows, ignore_index=True)
     output_dir = Path("data/raw")

@@ -3,6 +3,9 @@ import time
 import pandas as pd
 import yfinance as yf
 
+REQUEST_DELAY_SECONDS = 2
+ERROR_DELAY_SECONDS = 3
+
 tickers = ["JPM", "BAC", "C", "WFC", "GS", "MS"]
 
 rows = []
@@ -26,11 +29,12 @@ for ticker_symbol in tickers:
         rows.append(row)
         print(f"{ticker_symbol}: fundamentales extraídos correctamente")
 
-        time.sleep(2)
+        time.sleep(REQUEST_DELAY_SECONDS)
 
     except Exception as e:
         print(f"Error con {ticker_symbol}: {e}")
-
+        time.sleep(ERROR_DELAY_SECONDS)
+        
     df = pd.DataFrame(rows)
 
     output_dir = Path("data/raw")

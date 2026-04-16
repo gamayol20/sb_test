@@ -56,3 +56,9 @@ CREATE TABLE IF NOT EXISTS raw_calificadores (
     accion VARCHAR(100),
     fecha_carga TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE TABLE IF NOT EXISTS etl_control (
+    process_name VARCHAR(100) PRIMARY KEY,
+    last_row_count BIGINT,
+    last_execution_ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
