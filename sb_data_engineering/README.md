@@ -36,6 +36,7 @@ Esto permitió mantener un flujo completamente automatizado y controlado, cumpli
 
 ```text
 sb_data_engineering/
+├── .venv/
 ├── airflow/
 │   └── dags/
 ├── app/
@@ -57,15 +58,17 @@ sb_data_engineering/
 ├── requirements.txt
 └── README.md
 
+Nota: Arquitectura contiene el diseño de la arquitectura al alto nivel y detallado en draw.io
 
 ## Flujo del Pipeline
 
 1. Se extraen los datos desde Yahoo Finance mediante scripts en Python.
-2. Los archivos generados se almacenan en la carpeta `data/raw`.
+2. Los archivos generados se almacenan en la carpeta data/raw.
 3. Los datos son cargados en PostgreSQL como capa de landing.
-4. Posteriormente, los datos son llevados a ClickHouse como capa analítica.
-5. Sobre ClickHouse se ejecutan modelos y pruebas en DBT.
-6. Se construye una tabla de resumen mensual con métricas agregadas.
+4. Se valida si existen nuevos registros mediante la tabla etl_control.
+5. Si hay cambios, los datos son cargados en ClickHouse como capa analítica.
+6. Sobre ClickHouse se ejecutan modelos y pruebas en DBT.
+7. Se construye una tabla de resumen mensual con métricas agregadas.
 
 ## Se extrajeron los siguientes conjuntos de datos para bancos listados en la bolsa de valores de los Estados Unidos:
 
@@ -117,6 +120,7 @@ sb_data_engineering/
 - raw_fundamentales
 - raw_tenedores
 - raw_calificadores
+- etl_control (control de cargas incrementales)
 
 ## Tablas OLAP (ClickHouse):
 
@@ -169,8 +173,8 @@ Credenciales:
 
 Dentro de Airflow:
 
-Activar el DAG sb_finance_pipeline
-Ejecutar manualmente el DAG
+- Activar el DAG sb_finance_pipeline
+- Ejecutar manualmente el DAG
 
 El pipeline ejecuta automáticamente:
 
@@ -183,17 +187,14 @@ El pipeline ejecuta automáticamente:
 
 Antes de cargar los datos hacia ClickHouse, el proceso valida si existen nuevos registros en la landing zone (PostgreSQL) mediante una tabla de control (etl_control).
 
-Si no se detectan cambios en los datos, la carga hacia ClickHouse se omite, optimizando el proceso.
+- Si hay cambios → se carga ClickHouse
+- Si no hay cambios → se omite la carga
 
 6. Ejecución de transformaciones y calidad de datos con DBT
 
 Las validaciones y transformaciones se ejecutan de forma independiente desde el proyecto DBT.
 
-- Ubicarse en la carpeta del proyecto:
-
 cd dbt/sb_finance_project
-
-Ejecutar:
 
 dbt debug
 dbt run
@@ -201,39 +202,19 @@ dbt test
 
 ## Ejecución manual (opcional)
 
-Para fines de prueba o depuración, los scripts también pueden ejecutarse manualmente:
-
-1. Clonar el repositorio
-git clone <https://github.com/gamayol20/sb_test.git>
-cd sb_data_engineering
-
-2. Crear entorno virtual
 python -m venv .venv
-
-3. Instalar dependencias
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 
-4. Levantar contenedores
 docker compose up -d
 
-5. Ejecutar scripts de extracción
 .\.venv\Scripts\python.exe .\app\extract\extract_basic_info_multi.py
 .\.venv\Scripts\python.exe .\app\extract\extract_prices_multi.py
 .\.venv\Scripts\python.exe .\app\extract\extract_fundamentals_multi.py
 .\.venv\Scripts\python.exe .\app\extract\extract_holders_multi.py
 .\.venv\Scripts\python.exe .\app\extract\extract_ratings_multi.py
 
-6. Cargar landing zone en PostgreSQL
 .\.venv\Scripts\python.exe .\app\load\load_landing_postgres.py
-
-7. Cargar capa analítica en ClickHouse
 .\.venv\Scripts\python.exe .\app\load\load_clickhouse.py
-
-8. Ejecutar DBT
-cd dbt/sb_finance_project
-dbt debug
-dbt run
-dbt test
 
 
 ## Capturas de Pantalla

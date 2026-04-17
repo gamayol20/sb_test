@@ -1,6 +1,10 @@
 import os
+from pathlib import Path
+
 import pandas as pd
 from sqlalchemy import create_engine, text
+
+BASE_DIR = Path(__file__).resolve().parents[2]
 
 pg_host = os.getenv("POSTGRES_HOST", "localhost")
 ch_host = os.getenv("CLICKHOUSE_HOST", "localhost")
@@ -13,7 +17,47 @@ ch_engine = create_engine(
     f"clickhouse+http://default:clickhouse123@{ch_host}:8123/gobierno_datos_olap"
 )
 
-def load_dim_bank_info():
+
+def has_new_data() -> tuple[bool, int]:
+    current_count_query = "SELECT COUNT(*) AS total FROM raw_precios_diarios"
+    control_query = "SELECT last_row_count FROM etl_control WHERE process_name = 'load_clickhouse'"
+
+    current_count = int(pd.read_sql(current_count_query, pg_engine).iloc[0]["total"])
+    control_df = pd.read_sql(control_query, pg_engine)
+
+    if control_df.empty:
+        print("No previous control record found. Initial load will run.")
+        return True, current_count
+
+    last_count = int(control_df.iloc[0]["last_row_count"])
+
+    if current_count != last_count:
+        print(
+            f"New data detected in landing zone. Previous count: {last_count}, current count: {current_count}"
+        )
+        return True, current_count
+
+    print("No new data detected in landing zone. ClickHouse load will be skipped.")
+    return False, current_count
+
+
+def update_control_table(current_count: int) -> None:
+    upsert_sql = text("""
+        INSERT INTO etl_control (process_name, last_row_count, last_execution_ts)
+        VALUES ('load_clickhouse', :current_count, CURRENT_TIMESTAMP)
+        ON CONFLICT (process_name)
+        DO UPDATE SET
+            last_row_count = EXCLUDED.last_row_count,
+            last_execution_ts = EXCLUDED.last_execution_ts
+    """)
+
+    with pg_engine.begin() as conn:
+        conn.execute(upsert_sql, {"current_count": current_count})
+
+    print("Control table updated successfully.")
+
+
+def load_dim_bank_info() -> None:
     query = """
         SELECT
             ticker,
@@ -33,7 +77,8 @@ def load_dim_bank_info():
     df.to_sql("dim_bank_info", ch_engine, if_exists="append", index=False)
     print(f"Loaded dim_bank_info: {len(df)} rows")
 
-def load_fact_daily_prices():
+
+def load_fact_daily_prices() -> None:
     query = """
         SELECT
             ticker,
@@ -49,7 +94,8 @@ def load_fact_daily_prices():
     df.to_sql("fact_daily_prices", ch_engine, if_exists="append", index=False)
     print(f"Loaded fact_daily_prices: {len(df)} rows")
 
-def load_fact_fundamentals():
+
+def load_fact_fundamentals() -> None:
     query = """
         SELECT
             ticker,
@@ -64,7 +110,8 @@ def load_fact_fundamentals():
     df.to_sql("fact_fundamentals", ch_engine, if_exists="append", index=False)
     print(f"Loaded fact_fundamentals: {len(df)} rows")
 
-def load_fact_holders():
+
+def load_fact_holders() -> None:
     query = """
         SELECT
             ticker,
@@ -78,7 +125,8 @@ def load_fact_holders():
     df.to_sql("fact_holders", ch_engine, if_exists="append", index=False)
     print(f"Loaded fact_holders: {len(df)} rows")
 
-def load_fact_ratings():
+
+def load_fact_ratings() -> None:
     query = """
         SELECT
             ticker,
@@ -92,40 +140,6 @@ def load_fact_ratings():
     df.to_sql("fact_ratings", ch_engine, if_exists="append", index=False)
     print(f"Loaded fact_ratings: {len(df)} rows")
 
-def has_new_data():
-    current_count_query = "SELECT COUNT(*) AS total FROM raw_precios_diarios"
-    control_query = "SELECT last_row_count FROM etl_control WHERE process_name = 'load_clickhouse'"
-
-    current_count = pd.read_sql(current_count_query, pg_engine).iloc[0]["total"]
-    control_df = pd.read_sql(control_query, pg_engine)
-
-    if control_df.empty:
-        print("No previous control record found. Initial load will run.")
-        return True, current_count
-
-    last_count = control_df.iloc[0]["last_row_count"]
-
-    if current_count != last_count:
-        print(f"New data detected in landing zone. Previous count: {last_count}, current count: {current_count}")
-        return True, current_count
-
-    print("No new data detected in landing zone. ClickHouse load will be skipped.")
-    return False, current_count
-
-def update_control_table(current_count):
-    upsert_sql = f"""
-        INSERT INTO etl_control (process_name, last_row_count, last_execution_ts)
-        VALUES ('load_clickhouse', {current_count}, CURRENT_TIMESTAMP)
-        ON CONFLICT (process_name)
-        DO UPDATE SET
-            last_row_count = EXCLUDED.last_row_count,
-            last_execution_ts = EXCLUDED.last_execution_ts;
-    """
-
-    with pg_engine.begin() as conn:
-        conn.execute(text(upsert_sql))
-
-    print("Control table updated successfully.")
 
 if __name__ == "__main__":
     should_run, current_count = has_new_data()

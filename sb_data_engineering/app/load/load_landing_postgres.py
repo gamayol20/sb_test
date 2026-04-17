@@ -1,6 +1,9 @@
 import os
+from pathlib import Path
 import pandas as pd
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, text
+
+BASE_DIR = Path(__file__).resolve().parents[2]
 
 USER = "postgres"
 PASSWORD = "postgres"
@@ -10,10 +13,9 @@ DATABASE = "gobierno_datos"
 
 connection_string = f"postgresql+psycopg2://{USER}:{PASSWORD}@{HOST}:{PORT}/{DATABASE}"
 engine = create_engine(connection_string)
-
 files = [
     {
-        "path": "data/raw/all_banks_basic_info.csv",
+        "path": BASE_DIR / "data/raw/all_banks_basic_info.csv",
         "table": "raw_informacion_basica",
         "rename": {
             "company_name": "nombre_empresa",
@@ -29,7 +31,7 @@ files = [
         },
     },
     {
-        "path": "data/raw/all_banks_daily_prices.csv",
+        "path": BASE_DIR / "data/raw/all_banks_daily_prices.csv",
         "table": "raw_precios_diarios",
         "rename": {
             "Date": "fecha",
@@ -41,7 +43,7 @@ files = [
         },
     },
     {
-        "path": "data/raw/all_banks_fundamentals.csv",
+        "path": BASE_DIR / "data/raw/all_banks_fundamentals.csv",
         "table": "raw_fundamentales",
         "rename": {
             "company_name": "nombre_empresa",
@@ -52,7 +54,7 @@ files = [
         },
     },
     {
-        "path": "data/raw/all_banks_holders.csv",
+        "path": BASE_DIR / "data/raw/all_banks_holders.csv",
         "table": "raw_tenedores",
         "rename": {
             "date": "fecha",
@@ -62,7 +64,7 @@ files = [
         },
     },
     {
-        "path": "data/raw/all_banks_ratings.csv",
+        "path": BASE_DIR / "data/raw/all_banks_ratings.csv",
         "table": "raw_calificadores",
         "rename": {
             "date": "fecha",

@@ -11,7 +11,8 @@ CREATE TABLE IF NOT EXISTS raw_informacion_basica (
     pais VARCHAR(100),
     sitio_web VARCHAR(255),
     direccion VARCHAR(255),
-    fecha_carga TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    fecha_carga TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT uq_raw_informacion_basica UNIQUE (ticker)
 );
 
 CREATE TABLE IF NOT EXISTS raw_precios_diarios (
@@ -23,7 +24,8 @@ CREATE TABLE IF NOT EXISTS raw_precios_diarios (
     precio_minimo NUMERIC(18,6),
     precio_cierre NUMERIC(18,6),
     volumen BIGINT,
-    fecha_carga TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    fecha_carga TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT uq_raw_precios_diarios UNIQUE (ticker, fecha)
 );
 
 CREATE TABLE IF NOT EXISTS raw_fundamentales (
@@ -34,7 +36,8 @@ CREATE TABLE IF NOT EXISTS raw_fundamentales (
     deuda NUMERIC(20,2),
     capital_invertido NUMERIC(20,2),
     acciones_emitidas BIGINT,
-    fecha_carga TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    fecha_carga TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT uq_raw_fundamentales UNIQUE (ticker)
 );
 
 CREATE TABLE IF NOT EXISTS raw_tenedores (
@@ -44,7 +47,8 @@ CREATE TABLE IF NOT EXISTS raw_tenedores (
     tenedor VARCHAR(255),
     acciones BIGINT,
     valor NUMERIC(20,2),
-    fecha_carga TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    fecha_carga TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT uq_raw_tenedores UNIQUE (ticker, fecha, tenedor)
 );
 
 CREATE TABLE IF NOT EXISTS raw_calificadores (
@@ -54,7 +58,8 @@ CREATE TABLE IF NOT EXISTS raw_calificadores (
     calificacion_destino VARCHAR(100),
     calificacion_origen VARCHAR(100),
     accion VARCHAR(100),
-    fecha_carga TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    fecha_carga TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT uq_raw_calificadores UNIQUE (ticker, fecha, calificacion_destino, calificacion_origen, accion)
 );
 
 CREATE TABLE IF NOT EXISTS etl_control (
