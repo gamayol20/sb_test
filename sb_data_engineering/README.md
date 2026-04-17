@@ -36,7 +36,6 @@ Esto permitió mantener un flujo completamente automatizado y controlado, cumpli
 
 ```text
 sb_data_engineering/
-├── .venv/
 ├── airflow/
 │   └── dags/
 ├── app/
